@@ -66,7 +66,7 @@ import { CustomPreloadingStrategy } from './app.preloading-strategy';
               </a>
               <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors duration-200">
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.097.118.112.221.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.017 0z"/>
+                  <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 19c-3.866 0-7-3.134-7-7s3.134-7 7-7 7 3.134 7 7-3.134 7-7 7z"/>
                 </svg>
               </a>
               <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors duration-200">
@@ -93,7 +93,7 @@ import { CustomPreloadingStrategy } from './app.preloading-strategy';
           </div>
           
           <!-- Footer Links Grid -->
-          <div class="grid grid-cols-1 md:grid-cols-5 gap-6 mb-6 mobile-footer-links">
+          <div class="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6 mb-6 mobile-footer-links">
             <!-- Community -->
             <div>
               <h4 class="font-semibold mb-3 text-white mobile-footer-section-heading">{{ translate('footer.community') }}</h4>

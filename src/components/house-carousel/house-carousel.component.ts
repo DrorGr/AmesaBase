@@ -21,12 +21,13 @@ import { MobileDetectionService } from '../../services/mobile-detection.service'
                 <div class="flex-1 max-w-5xl flex flex-col mb-4">
                   <div class="relative overflow-hidden rounded-xl shadow-lg">
                     @if (isImageLoaded(house.images[getImageIndexForHouse(houseIndex)].url)) {
-                      <img
-                        [src]="house.images[getImageIndexForHouse(houseIndex)].url" 
-                        [alt]="house.images[getImageIndexForHouse(houseIndex)].alt"
-                        class="w-full h-64 md:h-96 object-cover object-center opacity-100 transition-opacity duration-300 mobile-carousel-image"
-                        (load)="onImageLoad($event)"
-                        (error)="onImageError($event)">
+                        <img
+                          [src]="house.images[getImageIndexForHouse(houseIndex)].url" 
+                          [alt]="house.images[getImageIndexForHouse(houseIndex)].alt"
+                          class="w-full h-64 md:h-96 object-cover object-center opacity-100 transition-opacity duration-300 mobile-carousel-image"
+                          (load)="onImageLoad($event)"
+                          (error)="onImageError($event)"
+                          onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjNmNGY2Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyNCIgZmlsbD0iIzY2NjY2NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlIG5vdCBhdmFpbGFibGU8L3RleHQ+PC9zdmc+'">
                     } @else {
                       <div class="w-full h-64 md:h-96 bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
                         <div class="animate-pulse flex flex-col items-center space-y-2">
@@ -48,16 +49,18 @@ import { MobileDetectionService } from '../../services/mobile-detection.service'
                     <!-- Mobile: Thumbnail images for house image selection -->
                     <div class="md:hidden relative w-full flex justify-center">
                       <!-- Mobile Thumbnail Images - centered -->
-                      <div class="flex space-x-1 mobile-carousel-thumbnails">
+                      <div class="flex space-x-2 mobile-carousel-thumbnails">
                         @for (image of house.images; track $index) {
                           <button 
                             (click)="goToHouseImage($index)"
-                            class="w-12 h-8 rounded overflow-hidden border-2 transition-all hover:scale-105 mobile-carousel-thumbnail"
+                            class="w-20 h-12 rounded overflow-hidden border-2 transition-all hover:scale-105 mobile-carousel-thumbnail"
+                            style="width: 8rem !important; height: 5rem !important;"
                             [class.border-blue-500]="currentSlide === houseIndex && currentHouseImageIndex === $index"
                             [class.border-gray-300]="!(currentSlide === houseIndex && currentHouseImageIndex === $index)"
                             [class.dark:border-blue-400]="currentSlide === houseIndex && currentHouseImageIndex === $index"
                             [class.dark:border-gray-600]="!(currentSlide === houseIndex && currentHouseImageIndex === $index)">
-                            <img [src]="image.url" [alt]="image.alt" class="w-full h-full object-cover">
+                            <img [src]="image.url" [alt]="image.alt" class="w-full h-full object-cover mobile-thumbnail-image" 
+                               >
                           </button>
                         }
                       </div>
@@ -69,12 +72,13 @@ import { MobileDetectionService } from '../../services/mobile-detection.service'
                       @for (image of house.images; track $index) {
                         <button 
                           (click)="goToHouseImage($index)"
-                          class="w-16 h-10 rounded overflow-hidden border-2 transition-all hover:scale-105"
+                          class="w-30 h-19 rounded overflow-hidden border-2 transition-all hover:scale-105 mobile-carousel-thumbnail"
                           [class.border-blue-500]="currentSlide === houseIndex && currentHouseImageIndex === $index"
                           [class.border-gray-300]="!(currentSlide === houseIndex && currentHouseImageIndex === $index)"
                           [class.dark:border-blue-400]="currentSlide === houseIndex && currentHouseImageIndex === $index"
                           [class.dark:border-gray-600]="!(currentSlide === houseIndex && currentHouseImageIndex === $index)">
-                          <img [src]="image.url" [alt]="image.alt" class="w-full h-full object-cover">
+                          <img [src]="image.url" [alt]="image.alt" class="w-full h-full object-cover mobile-thumbnail-image" 
+                          >
                         </button>
                       }
                     </div>
@@ -234,7 +238,7 @@ import { MobileDetectionService } from '../../services/mobile-detection.service'
   `,
   styles: [`
     /* Mobile-specific improvements for house carousel */
-    @media (max-width: 767px) {
+    @media (max-width: 990px) {
       .mobile-carousel-image {
         height: 20rem !important;
         object-fit: cover !important;
@@ -287,8 +291,9 @@ import { MobileDetectionService } from '../../services/mobile-detection.service'
       }
       
       .mobile-carousel-thumbnail {
-        width: 5rem !important;
-        height: 3rem !important;
+        width: 12rem !important;
+        height: 7rem !important;
+
       }
       
       /* Override Tailwind classes directly */
@@ -348,17 +353,56 @@ import { MobileDetectionService } from '../../services/mobile-detection.service'
       
       /* Mobile thumbnails - target the mobile thumbnail section */
       .mobile-carousel-thumbnails .mobile-carousel-thumbnail {
-        width: 5rem !important;
-        height: 3rem !important;
+        width: 7.5rem !important;
+        height: 4.5rem !important;
       }
       
       /* Override Tailwind thumbnail classes for mobile */
       .mobile-carousel-thumbnails .mobile-carousel-thumbnail.w-12 {
-        width: 5rem !important;
+        width: 7.5rem !important;
       }
       
       .mobile-carousel-thumbnails .mobile-carousel-thumbnail.h-8 {
-        height: 3rem !important;
+        height: 4.5rem !important;
+      }
+      
+      /* Mobile thumbnail images - make them bigger and more visible */
+      .mobile-thumbnail-image {
+        width: 200% !important;
+        height: 200% !important;
+        object-fit: cover !important;
+        object-position: center !important;
+        border-radius: 0.375rem !important;
+        transform: scale(2) !important;
+        transform-origin: center !important;
+        position: relative !important;
+        z-index: 10 !important;
+      }
+      
+      /* Alternative targeting - direct img elements in mobile thumbnails */
+      .mobile-carousel-thumbnails img {
+        width: 200% !important;
+        height: 200% !important;
+        object-fit: cover !important;
+        object-position: center !important;
+        border-radius: 0.375rem !important;
+        transform: scale(2) !important;
+        transform-origin: center !important;
+        position: relative !important;
+
+      }
+      
+      /* Even more specific targeting */
+      .mobile-carousel-thumbnail img {
+        width: 200% !important;
+        height: 200% !important;
+        object-fit: cover !important;
+        object-position: center !important;
+        border-radius: 0.375rem !important;
+        transform: scale(2) !important;
+        transform-origin: center !important;
+        position: relative !important;
+        z-index: 10 !important;
       }
     }
   `]
@@ -390,19 +434,19 @@ export class HouseCarouselComponent implements OnInit, OnDestroy {
       lotteryEndDate: new Date('2025-02-15'),
       images: [
         {
-          url: 'https://images.pexels.com/photos/1918291/pexels-photo-1918291.jpeg',
+          url: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop',
           alt: 'Modern downtown condo exterior'
         },
         {
-          url: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg',
+          url: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop',
           alt: 'Modern living room'
         },
         {
-          url: 'https://images.pexels.com/photos/1571453/pexels-photo-1571453.jpeg',
+          url: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop',
           alt: 'Modern kitchen'
         },
         {
-          url: 'https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg',
+          url: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&h=600&fit=crop',
           alt: 'Modern bedroom'
         }
       ]
@@ -418,19 +462,19 @@ export class HouseCarouselComponent implements OnInit, OnDestroy {
       lotteryEndDate: new Date('2025-02-20'),
       images: [
         {
-          url: 'https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg',
+          url: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&h=600&fit=crop',
           alt: 'Suburban family home exterior'
         },
         {
-          url: 'https://images.pexels.com/photos/1571471/pexels-photo-1571471.jpeg',
+          url: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop',
           alt: 'Family living room'
         },
         {
-          url: 'https://images.pexels.com/photos/1571457/pexels-photo-1571457.jpeg',
+          url: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop',
           alt: 'Family kitchen'
         },
         {
-          url: 'https://images.pexels.com/photos/1571463/pexels-photo-1571463.jpeg',
+          url: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop',
           alt: 'Family dining room'
         }
       ]
@@ -446,19 +490,19 @@ export class HouseCarouselComponent implements OnInit, OnDestroy {
       lotteryEndDate: new Date('2025-03-01'),
       images: [
         {
-          url: 'https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg',
+          url: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&h=600&fit=crop',
           alt: 'Luxury waterfront villa exterior'
         },
         {
-          url: 'https://images.pexels.com/photos/1571475/pexels-photo-1571475.jpeg',
+          url: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop',
           alt: 'Luxury living area'
         },
         {
-          url: 'https://images.pexels.com/photos/1571477/pexels-photo-1571477.jpeg',
+          url: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&h=600&fit=crop',
           alt: 'Luxury master bedroom'
         },
         {
-          url: 'https://images.pexels.com/photos/1571479/pexels-photo-1571479.jpeg',
+          url: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&h=600&fit=crop',
           alt: 'Luxury bathroom'
         }
       ]

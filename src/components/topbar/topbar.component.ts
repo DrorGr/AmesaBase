@@ -222,14 +222,11 @@ export class TopbarComponent implements OnInit {
 
   // Watch for mobile state changes to auto-close menu
   ngOnInit() {
-    // Use effect to watch mobile state changes
-    effect(() => {
-      const isMobile = this.mobileDetectionService.isMobile();
-      if (!isMobile && this.isMobileMenuOpen) {
-        this.isMobileMenuOpen = false;
-        console.log('Switched to desktop - closing mobile menu');
-      }
-    });
+    // Check mobile state on init
+    const isMobile = this.mobileDetectionService.isMobile();
+    if (!isMobile && this.isMobileMenuOpen) {
+      this.isMobileMenuOpen = false;
+    }
   }
 
   openAuthModal() {

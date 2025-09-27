@@ -180,7 +180,7 @@ html {
 
 
 /* Mobile-specific improvements */
-@media (max-width: 767px) {
+@media (max-width: 1200px) {
   .hero-title {
     font-size: 3.5rem;
     line-height: 1.1;
@@ -472,19 +472,121 @@ html {
   
   /* Mobile thumbnails - target the mobile thumbnail section */
   app-house-carousel .mobile-carousel-thumbnails .mobile-carousel-thumbnail {
-    width: 5rem !important;
-    height: 3rem !important;
+    width: 7.5rem !important;
+    height: 4.5rem !important;
   }
   
   /* Override Tailwind thumbnail classes for mobile */
   app-house-carousel .mobile-carousel-thumbnails .mobile-carousel-thumbnail.w-12 {
-    width: 5rem !important;
+    width: 7.5rem !important;
   }
   
   app-house-carousel .mobile-carousel-thumbnails .mobile-carousel-thumbnail.h-8 {
-    height: 3rem !important;
+    height: 4.5rem !important;
+  }
+  
+  /* Mobile thumbnail images - make them bigger and more visible */
+  app-house-carousel .mobile-thumbnail-image {
+    width: 200% !important;
+    height: 200% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    border-radius: 0.375rem !important;
+    transform: scale(2) !important;
+    transform-origin: center !important;
+    position: relative !important;
+    z-index: 10 !important;
+    border: 5px solid red !important; /* TEST: Red border to verify CSS is working */
+  }
+  
+  /* Alternative targeting - direct img elements in mobile thumbnails */
+  app-house-carousel .mobile-carousel-thumbnails img {
+    width: 200% !important;
+    height: 200% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    border-radius: 0.375rem !important;
+    transform: scale(2) !important;
+    transform-origin: center !important;
+    position: relative !important;
+    z-index: 10 !important;
+    border: 5px solid green !important; /* TEST: Green border for alternative targeting */
+  }
+  
+  /* Even more specific targeting */
+  app-house-carousel .mobile-carousel-thumbnail img {
+    width: 200% !important;
+    height: 200% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    border-radius: 0.375rem !important;
+    transform: scale(2) !important;
+    transform-origin: center !important;
+    position: relative !important;
+    z-index: 10 !important;
+  }
+  
+  /* Mobile footer layout improvements */
+  .mobile-footer-links {
+    gap: 1rem !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+  }
+  
+  .mobile-footer-links > div {
+    margin-bottom: 1rem !important;
+  }
+  
+  .mobile-footer-links h4 {
+    font-size: 1.25rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+  
+  .mobile-footer-links ul {
+    gap: 0.5rem !important;
+  }
+  
+  .mobile-footer-links li {
+    margin-bottom: 0.25rem !important;
+  }
+  
+  /* Make logo 4x bigger on mobile */
+  .mobile-footer-logo {
+    height: 9rem !important;
+    width: auto !important;
+  }
+  
+  /* Compact mobile footer header */
+  .mobile-footer-header {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 1rem !important;
+  }
+  
+  .mobile-footer-logo-section {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1rem !important;
+  }
+  
+  .mobile-footer-description {
+    font-size: 1.5rem !important;
+    text-align: center !important;
+    max-width: 100% !important;
+  }
+  
+  .mobile-footer-social {
+    justify-content: center !important;
+  }
+  
+  /* Force 2-column layout on mobile */
+  .grid.grid-cols-2 {
+    grid-template-columns: 1fr 1fr !important;
+    display: grid !important;
   }
 }
+
 
 @media (min-width: 768px) {
   .hero-title {
