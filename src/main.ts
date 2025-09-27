@@ -8,6 +8,7 @@ import { TranslationService } from './services/translation.service';
 import { ThemeService } from './services/theme.service';
 import { RouteLoadingService } from './services/route-loading.service';
 import { RoutePerformanceInterceptor } from './interceptors/route-performance.interceptor';
+import { MobileDetectionService } from './services/mobile-detection.service';
 import { routes } from './app.routes';
 import { provideRouter, withPreloading, withInMemoryScrolling } from '@angular/router';
 import { CustomPreloadingStrategy } from './app.preloading-strategy';
@@ -84,8 +85,8 @@ import { CustomPreloadingStrategy } from './app.preloading-strategy';
           <div class="mb-4">
             <!-- Community Support Section -->
             <div>
-              <h3 class="text-blue-400 font-semibold text-base mb-2">{{ translate('footer.supportCause') }}</h3>
-              <p class="text-gray-300 text-sm leading-relaxed max-w-4xl">
+              <h3 class="text-blue-400 font-semibold text-base mb-2 mobile-footer-support-cause">{{ translate('footer.supportCause') }}</h3>
+              <p class="text-gray-300 text-sm leading-relaxed max-w-4xl mobile-footer-support-description">
                 {{ translate('footer.supportDescription') }}
               </p>
             </div>
@@ -95,8 +96,8 @@ import { CustomPreloadingStrategy } from './app.preloading-strategy';
           <div class="grid grid-cols-1 md:grid-cols-5 gap-6 mb-6 mobile-footer-links">
             <!-- Community -->
             <div>
-              <h4 class="font-semibold mb-3 text-white">{{ translate('footer.community') }}</h4>
-              <ul class="space-y-2 text-gray-300 text-sm">
+              <h4 class="font-semibold mb-3 text-white mobile-footer-section-heading">{{ translate('footer.community') }}</h4>
+              <ul class="space-y-2 text-gray-300 text-sm mobile-footer-link-text">
                 <li><button (click)="navigateToAbout()" class="hover:text-blue-400 transition-colors duration-200 hover:translate-x-1 transform inline-block text-left">{{ translate('footer.about') }}</button></li>
                 <li><button (click)="navigateToSponsorship()" class="hover:text-blue-400 transition-colors duration-200 hover:translate-x-1 transform inline-block text-left">{{ translate('footer.makeSponsorship') }}</button></li>
                 <li><button (click)="navigateToPartners()" class="hover:text-blue-400 transition-colors duration-200 hover:translate-x-1 transform inline-block text-left">{{ translate('footer.partners') }}</button></li>
@@ -106,8 +107,8 @@ import { CustomPreloadingStrategy } from './app.preloading-strategy';
             
             <!-- Support -->
             <div>
-              <h4 class="font-semibold mb-3 text-white">{{ translate('footer.support') }}</h4>
-              <ul class="space-y-2 text-gray-300 text-sm">
+              <h4 class="font-semibold mb-3 text-white mobile-footer-section-heading">{{ translate('footer.support') }}</h4>
+              <ul class="space-y-2 text-gray-300 text-sm mobile-footer-link-text">
                 <li><button (click)="navigateToHelp()" class="hover:text-blue-400 transition-colors duration-200 hover:translate-x-1 transform inline-block text-left">{{ translate('footer.helpCenter') }}</button></li>
                 <li><a href="#" class="hover:text-blue-400 transition-colors duration-200 hover:translate-x-1 transform inline-block">{{ translate('footer.liveChat') }}</a></li>
                 <li><a href="#" class="hover:text-blue-400 transition-colors duration-200 hover:translate-x-1 transform inline-block">{{ translate('footer.contactUs') }}</a></li>
@@ -119,8 +120,8 @@ import { CustomPreloadingStrategy } from './app.preloading-strategy';
             
             <!-- Legal -->
             <div>
-              <h4 class="font-semibold mb-3 text-white">{{ translate('footer.legal') }}</h4>
-              <ul class="space-y-2 text-gray-300 text-sm">
+              <h4 class="font-semibold mb-3 text-white mobile-footer-section-heading">{{ translate('footer.legal') }}</h4>
+              <ul class="space-y-2 text-gray-300 text-sm mobile-footer-link-text">
                 <li><a href="#" class="hover:text-blue-400 transition-colors duration-200 hover:translate-x-1 transform inline-block">{{ translate('footer.regulations') }}</a></li>
                 <li><a href="#" class="hover:text-blue-400 transition-colors duration-200 hover:translate-x-1 transform inline-block">{{ translate('footer.termsConditions') }}</a></li>
                 <li><a href="#" class="hover:text-blue-400 transition-colors duration-200 hover:translate-x-1 transform inline-block">{{ translate('footer.privacyPolicy') }}</a></li>
@@ -131,17 +132,17 @@ import { CustomPreloadingStrategy } from './app.preloading-strategy';
             
                 <!-- Legal Partners -->
                 <div>
-                  <h4 class="font-semibold mb-3 text-white">{{ translate('footer.legalPartners') }}</h4>
+                  <h4 class="font-semibold mb-3 text-white mobile-footer-section-heading">{{ translate('footer.legalPartners') }}</h4>
                   <div class="space-y-3">
                     <div>
-                      <div class="text-gray-400 text-xs mb-1">{{ translate('partners.legalPartner') }}</div>
-                      <a href="https://ziebapartners.com" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-blue-400 transition-colors duration-200 hover:translate-x-1 transform inline-block text-sm">
+                      <div class="text-gray-400 text-xs mb-1 mobile-footer-link-text">{{ translate('partners.legalPartner') }}</div>
+                      <a href="https://ziebapartners.com" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-blue-400 transition-colors duration-200 hover:translate-x-1 transform inline-block text-sm mobile-footer-link-text">
                         Zeiba & Partners
                       </a>
                     </div>
                     <div>
-                      <div class="text-gray-400 text-xs mb-1">{{ translate('partners.accountingPartner') }}</div>
-                      <a href="https://pik.tax/kontakt" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-blue-400 transition-colors duration-200 hover:translate-x-1 transform inline-block text-sm">
+                      <div class="text-gray-400 text-xs mb-1 mobile-footer-link-text">{{ translate('partners.accountingPartner') }}</div>
+                      <a href="https://pik.tax/kontakt" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-blue-400 transition-colors duration-200 hover:translate-x-1 transform inline-block text-sm mobile-footer-link-text">
                         PiK Podatki i Księgowość Sp. z o.o
                       </a>
                     </div>
@@ -150,7 +151,7 @@ import { CustomPreloadingStrategy } from './app.preloading-strategy';
             
             <!-- App Download -->
             <div>
-              <h4 class="font-semibold mb-3 text-white">{{ translate('footer.downloadApp') }}</h4>
+              <h4 class="font-semibold mb-3 text-white mobile-footer-section-heading">{{ translate('footer.downloadApp') }}</h4>
               <div class="flex flex-col space-y-2">
                 <a href="#" class="inline-block">
                   <div class="bg-black rounded-lg px-4 py-3 flex items-center space-x-3 hover:bg-gray-800 transition-colors duration-200">
@@ -180,7 +181,7 @@ import { CustomPreloadingStrategy } from './app.preloading-strategy';
           
           <!-- Copyright -->
           <div class="border-t border-gray-700 pt-4">
-            <p class="text-center text-gray-400">{{ translate('footer.copyright') }}</p>
+            <p class="text-center text-gray-400 mobile-footer-copyright">{{ translate('footer.copyright') }}</p>
           </div>
         </div>
       </footer>
@@ -192,8 +193,12 @@ export class App {
   private themeService = inject(ThemeService);
   private router = inject(Router);
   private routeLoadingService = inject(RouteLoadingService);
+  private mobileDetectionService = inject(MobileDetectionService);
   
   isLoading = this.routeLoadingService.loading$;
+  
+  // Use global mobile detection
+  isMobile = this.mobileDetectionService.isMobile;
 
   translate(key: string): string {
     return this.translationService.translate(key);

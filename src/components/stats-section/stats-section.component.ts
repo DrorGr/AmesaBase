@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslationService } from '../../services/translation.service';
 import { inject } from '@angular/core';
+import { MobileDetectionService } from '../../services/mobile-detection.service';
 
 @Component({
   selector: 'app-stats-section',
@@ -74,6 +75,10 @@ import { inject } from '@angular/core';
 })
 export class StatsSectionComponent {
   private translationService = inject(TranslationService);
+  private mobileDetectionService = inject(MobileDetectionService);
+  
+  // Use global mobile detection
+  isMobile = this.mobileDetectionService.isMobile;
 
   stats = [
     { value: '1:2,500', labelKey: 'stats.oddsToWin' },

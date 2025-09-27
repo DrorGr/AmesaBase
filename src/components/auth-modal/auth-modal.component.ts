@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { TranslationService } from '../../services/translation.service';
+import { MobileDetectionService } from '../../services/mobile-detection.service';
 import { PasswordResetModalComponent } from '../password-reset-modal/password-reset-modal.component';
 
 @Component({
@@ -174,29 +175,29 @@ import { PasswordResetModalComponent } from '../password-reset-modal/password-re
       }
       
       .mobile-auth-title {
-        font-size: 3rem !important;
+        font-size: 3.5rem !important;
         line-height: 1.3 !important;
       }
       
       .mobile-auth-button {
-        font-size: 1.75rem !important;
+        font-size: 2rem !important;
         padding: 1.5rem 2rem !important;
         min-height: 80px !important;
       }
       
       .mobile-auth-input {
-        font-size: 1.5rem !important;
+        font-size: 1.75rem !important;
         padding: 1.5rem !important;
         min-height: 80px !important;
       }
       
       .mobile-auth-label {
-        font-size: 1.25rem !important;
+        font-size: 1.5rem !important;
         margin-bottom: 1rem !important;
       }
       
       .mobile-social-button {
-        font-size: 1.75rem !important;
+        font-size: 2rem !important;
         padding: 1.5rem 2rem !important;
         min-height: 80px !important;
       }
@@ -213,6 +214,10 @@ export class AuthModalComponent {
   private authService = inject(AuthService);
   private translationService = inject(TranslationService);
   private router = inject(Router);
+  private mobileDetectionService = inject(MobileDetectionService);
+  
+  // Use global mobile detection
+  isMobile = this.mobileDetectionService.isMobile;
   
   mode = input.required<'login' | 'register'>();
   close = output<void>();

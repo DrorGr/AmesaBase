@@ -106,25 +106,25 @@ import { TranslationService } from '../../services/translation.service';
     
     @media (max-width: 767px) {
       .mobile-card-title {
-        font-size: 2rem !important;
+        font-size: 2.5rem !important;
         line-height: 1.3 !important;
       }
       
       .mobile-card-text {
-        font-size: 1.5rem !important;
+        font-size: 1.75rem !important;
         line-height: 1.5 !important;
       }
       
       .mobile-card-price {
-        font-size: 2rem !important;
+        font-size: 2.25rem !important;
       }
       
       .mobile-card-details {
-        font-size: 1.5rem !important;
+        font-size: 1.75rem !important;
       }
       
       .mobile-card-button {
-        font-size: 1.75rem !important;
+        font-size: 2rem !important;
         padding: 1.5rem 2rem !important;
         min-height: 80px !important;
       }
@@ -134,6 +134,76 @@ import { TranslationService } from '../../services/translation.service';
       }
       
       .mobile-card-time {
+        font-size: 2rem !important;
+      }
+      
+      /* Override Tailwind text classes specifically for house cards */
+      .text-gray-600,
+      .text-gray-300 {
+        font-size: 1.75rem !important;
+      }
+      
+      .text-xl {
+        font-size: 2.25rem !important;
+      }
+      
+      .text-2xl {
+        font-size: 2.5rem !important;
+      }
+      
+      .text-base {
+        font-size: 1.75rem !important;
+      }
+      
+      .text-sm {
+        font-size: 1.5rem !important;
+      }
+      
+      /* Specific targeting for property details */
+      .flex.items-center.justify-between {
+        font-size: 1.75rem !important;
+      }
+      
+      .flex.items-center.justify-between span {
+        font-size: 1.75rem !important;
+      }
+      
+      /* Target the specific property details section */
+      .flex.items-center.justify-between.text-gray-600,
+      .flex.items-center.justify-between.text-gray-300 {
+        font-size: 1.75rem !important;
+      }
+      
+      /* Target all spans within the details section */
+      .flex.items-center.justify-between.text-gray-600 span,
+      .flex.items-center.justify-between.text-gray-300 span {
+        font-size: 1.75rem !important;
+      }
+      
+      /* Target tickets sold section */
+      .flex.justify-between.text-gray-600,
+      .flex.justify-between.text-gray-300 {
+        font-size: 1.75rem !important;
+      }
+      
+      .flex.justify-between.text-gray-600 span,
+      .flex.justify-between.text-gray-300 span {
+        font-size: 1.75rem !important;
+      }
+      
+      /* Target lottery ends section */
+      .text-center.text-gray-600,
+      .text-center.text-gray-300 {
+        font-size: 1.75rem !important;
+      }
+      
+      .text-center.text-gray-600 div,
+      .text-center.text-gray-300 div {
+        font-size: 1.75rem !important;
+      }
+      
+      /* Target sign in text */
+      .text-center p {
         font-size: 1.75rem !important;
       }
     }

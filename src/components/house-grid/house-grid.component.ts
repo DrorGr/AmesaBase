@@ -46,12 +46,12 @@ import { TranslationService } from '../../services/translation.service';
   styles: [`
     @media (max-width: 767px) {
       .mobile-grid-title {
-        font-size: 4rem !important;
+        font-size: 4.5rem !important;
         line-height: 1.2 !important;
       }
       
       .mobile-grid-subtitle {
-        font-size: 2rem !important;
+        font-size: 2.25rem !important;
         line-height: 1.5 !important;
       }
       
@@ -61,13 +61,26 @@ import { TranslationService } from '../../services/translation.service';
       }
       
       .mobile-empty-title {
-        font-size: 3rem !important;
+        font-size: 3.5rem !important;
         line-height: 1.3 !important;
       }
       
       .mobile-empty-text {
-        font-size: 1.75rem !important;
+        font-size: 2rem !important;
         line-height: 1.5 !important;
+      }
+      
+      /* Override Tailwind text classes specifically for house grid */
+      .text-4xl {
+        font-size: 4.5rem !important;
+      }
+      
+      .text-xl {
+        font-size: 2.25rem !important;
+      }
+      
+      .text-2xl {
+        font-size: 2.5rem !important;
       }
     }
   `]
