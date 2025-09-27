@@ -11,7 +11,7 @@ export class AuthService {
     return this.currentUser.asReadonly();
   }
 
-  login(email: string, password: string): Promise<boolean> {
+  login(email: string, _password: string): Promise<boolean> {
     return new Promise((resolve) => {
       setTimeout(() => {
         this.currentUser.set({
@@ -26,7 +26,7 @@ export class AuthService {
     });
   }
 
-  register(name: string, email: string, password: string): Promise<boolean> {
+  register(name: string, email: string, _password: string): Promise<boolean> {
     return new Promise((resolve) => {
       setTimeout(() => {
         this.currentUser.set({
@@ -125,7 +125,7 @@ export class AuthService {
     });
   }
 
-  async resetPassword(token: string, newPassword: string): Promise<boolean> {
+  async resetPassword(token: string, _newPassword: string): Promise<boolean> {
     return new Promise((resolve) => {
       setTimeout(() => {
         // Simulate password reset

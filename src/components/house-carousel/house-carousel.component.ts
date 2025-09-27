@@ -1,7 +1,6 @@
 import { Component, OnInit, OnDestroy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslationService } from '../../services/translation.service';
-import { LotteryService } from '../../services/lottery.service';
 import { MobileDetectionService } from '../../services/mobile-detection.service';
 
 @Component({
@@ -409,7 +408,6 @@ import { MobileDetectionService } from '../../services/mobile-detection.service'
 })
 export class HouseCarouselComponent implements OnInit, OnDestroy {
   private translationService = inject(TranslationService);
-  private lotteryService = inject(LotteryService);
   private mobileDetectionService = inject(MobileDetectionService);
   
   // Use global mobile detection

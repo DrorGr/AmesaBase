@@ -14,7 +14,7 @@ export class MobileDetectionService {
   }
 
   @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
+  onResize(_event: any) {
     this.checkMobile();
   }
 
