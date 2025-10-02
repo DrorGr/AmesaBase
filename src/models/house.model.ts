@@ -1,10 +1,16 @@
+export interface HouseImage {
+  url: string;
+  alt: string;
+}
+
 export interface House {
   id: string;
   title: string;
   description: string;
   price: number;
   location: string;
-  imageUrl: string;
+  imageUrl: string; // Keep for backward compatibility
+  images: HouseImage[]; // New array for multiple images
   bedrooms: number;
   bathrooms: number;
   sqft: number;
