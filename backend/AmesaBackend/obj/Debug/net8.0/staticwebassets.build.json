@@ -1,0 +1,19 @@
+{
+  "Version": 1,
+  "Hash": "7WORYdvLiqJ2XC6sYdorJAoAenYB/z7qlG8bnzT/gjQ=",
+  "Source": "AmesaBackend",
+  "BasePath": "_content/AmesaBackend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "AmesaBackend\\wwwroot",
+      "Source": "AmesaBackend",
+      "ContentRoot": "C:\\Users\\dror0\\Curser-Repos\\AmesaBase\\backend\\AmesaBackend\\wwwroot\\",
+      "BasePath": "_content/AmesaBackend",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": []
+}

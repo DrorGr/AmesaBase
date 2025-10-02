@@ -15,9 +15,6 @@ import { TranslationService } from '../../services/translation.service';
           <h2 class="text-4xl md:text-4xl font-black text-gray-900 dark:text-white mb-6 text-balance mobile-grid-title">
             {{ translate('houses.title') }}
           </h2>
-          <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed text-balance mobile-grid-subtitle">
-            {{ translate('houses.subtitle') }}
-          </p>
         </div>
 
         <div class="mobile-house-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 1.5rem; align-items: start; padding-bottom: 2rem; width: 100%;">

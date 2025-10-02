@@ -1,81 +1,184 @@
 import { Injectable, signal } from '@angular/core';
-import { House } from '../models/house.model';
+import { Observable, throwError } from 'rxjs';
+import { map, catchError, tap } from 'rxjs/operators';
+import { ApiService, PagedResponse } from './api.service';
+import { 
+  House, 
+  HouseDto, 
+  LotteryTicketDto, 
+  PurchaseTicketRequest 
+} from '../models/house.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LotteryService {
-  private houses = signal<House[]>([
-    {
-      id: '1',
-      title: 'Modern Downtown Condo',
-      description: 'Stunning 2-bedroom condo in the heart of downtown with city views and modern amenities.',
-      price: 450000,
-      location: 'Downtown, City Center',
-      imageUrl: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop',
-      images: [
-        { url: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop', alt: 'Modern downtown condo exterior' },
-        { url: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop', alt: 'Modern downtown condo living room' },
-        { url: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop', alt: 'Modern downtown condo kitchen' }
-      ],
-      bedrooms: 2,
-      bathrooms: 2,
-      sqft: 1200,
-      lotteryEndDate: new Date('2025-02-15'),
-      totalTickets: 1000,
-      soldTickets: 650,
-      ticketPrice: 50,
-      status: 'active'
-    },
-    {
-      id: '2',
-      title: 'Suburban Family Home',
-      description: 'Beautiful 4-bedroom family home with large backyard and garage in quiet neighborhood.',
-      price: 680000,
-      location: 'Maple Heights Suburb',
-      imageUrl: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&h=600&fit=crop',
-      images: [
-        { url: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&h=600&fit=crop', alt: 'Suburban family home exterior' },
-        { url: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&h=600&fit=crop', alt: 'Suburban family home backyard' },
-        { url: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&h=600&fit=crop', alt: 'Suburban family home interior' }
-      ],
-      bedrooms: 4,
-      bathrooms: 3,
-      sqft: 2400,
-      lotteryEndDate: new Date('2025-02-20'),
-      totalTickets: 1500,
-      soldTickets: 890,
-      ticketPrice: 75,
-      status: 'active'
-    },
-    {
-      id: '3',
-      title: 'Luxury Waterfront Villa',
-      description: 'Exclusive waterfront villa with private beach access and panoramic ocean views.',
-      price: 1200000,
-      location: 'Oceanfront District',
-      imageUrl: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&h=600&fit=crop',
-      images: [
-        { url: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&h=600&fit=crop', alt: 'Luxury waterfront villa exterior' },
-        { url: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&h=600&fit=crop', alt: 'Luxury waterfront villa ocean view' },
-        { url: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&h=600&fit=crop', alt: 'Luxury waterfront villa pool area' }
-      ],
-      bedrooms: 5,
-      bathrooms: 4,
-      sqft: 3500,
-      lotteryEndDate: new Date('2025-03-01'),
-      totalTickets: 2000,
-      soldTickets: 1245,
-      ticketPrice: 100,
-      status: 'active'
-    }
-  ]);
+  private houses = signal<House[]>([]);
+  private userTickets = signal<LotteryTicketDto[]>([]);
+
+  constructor(private apiService: ApiService) {
+    // Load houses automatically when service is initialized
+    this.loadHousesInternal();
+  }
 
   getHouses() {
     return this.houses.asReadonly();
   }
 
-  getHouseById(id: string): House | undefined {
+  getUserTickets() {
+    return this.userTickets.asReadonly();
+  }
+
+  // Load houses from API and update the signal
+  private loadHousesInternal(): void {
+    this.getHousesFromApi().subscribe({
+      next: (response) => {
+        // Convert HouseDto to House format
+        const houses: House[] = response.items.map(dto => this.convertHouseDtoToHouse(dto));
+        this.houses.set(houses);
+      },
+      error: (error) => {
+        console.error('Failed to load houses:', error);
+        // Set empty array on error
+        this.houses.set([]);
+      }
+    });
+  }
+
+  // Get houses with pagination and filtering
+  getHousesFromApi(params?: {
+    page?: number;
+    limit?: number;
+    status?: string;
+    minPrice?: number;
+    maxPrice?: number;
+    location?: string;
+    bedrooms?: number;
+    bathrooms?: number;
+  }): Observable<PagedResponse<HouseDto>> {
+    return this.apiService.get<PagedResponse<HouseDto>>('houses', params).pipe(
+      map(response => {
+        if (response.success && response.data) {
+          return response.data;
+        }
+        throw new Error('Failed to fetch houses');
+      }),
+      catchError(error => {
+        console.error('Error fetching houses:', error);
+        return throwError(() => error);
+      })
+    );
+  }
+
+  // Get single house by ID
+  getHouseById(id: string): Observable<HouseDto> {
+    return this.apiService.get<HouseDto>(`houses/${id}`).pipe(
+      map(response => {
+        if (response.success && response.data) {
+          return response.data;
+        }
+        throw new Error('House not found');
+      }),
+      catchError(error => {
+        console.error('Error fetching house:', error);
+        return throwError(() => error);
+      })
+    );
+  }
+
+  // Get available tickets for a house
+  getAvailableTickets(houseId: string): Observable<{
+    totalTickets: number;
+    ticketsSold: number;
+    availableTickets: number;
+    ticketPrice: number;
+    canPurchase: boolean;
+  }> {
+    return this.apiService.get(`houses/${houseId}/tickets`).pipe(
+      map(response => {
+        if (response.success && response.data) {
+          const data = response.data as any;
+          return {
+            totalTickets: data.totalTickets,
+            ticketsSold: data.ticketsSold,
+            availableTickets: data.availableTickets,
+            ticketPrice: data.ticketPrice,
+            canPurchase: data.canPurchase
+          };
+        }
+        throw new Error('Failed to get ticket information');
+      }),
+      catchError(error => {
+        console.error('Error fetching available tickets:', error);
+        return throwError(() => error);
+      })
+    );
+  }
+
+  // Purchase tickets
+  purchaseTicket(purchaseRequest: PurchaseTicketRequest): Observable<{
+    ticketsPurchased: number;
+    totalCost: number;
+    ticketNumbers: string[];
+  }> {
+    return this.apiService.post(`houses/${purchaseRequest.houseId}/tickets/purchase`, purchaseRequest).pipe(
+      map(response => {
+        if (response.success && response.data) {
+          const data = response.data as any;
+          return {
+            ticketsPurchased: data.ticketsPurchased,
+            totalCost: data.totalCost,
+            ticketNumbers: data.ticketNumbers
+          };
+        }
+        throw new Error('Failed to purchase tickets');
+      }),
+      catchError(error => {
+        console.error('Error purchasing tickets:', error);
+        return throwError(() => error);
+      })
+    );
+  }
+
+  // Get user's tickets
+  getUserTicketsFromApi(): Observable<LotteryTicketDto[]> {
+    return this.apiService.get<LotteryTicketDto[]>('lottery/tickets').pipe(
+      tap(response => {
+        if (response.success && response.data) {
+          this.userTickets.set(response.data);
+        }
+      }),
+      map(response => {
+        if (response.success && response.data) {
+          return response.data;
+        }
+        throw new Error('Failed to fetch user tickets');
+      }),
+      catchError(error => {
+        console.error('Error fetching user tickets:', error);
+        return throwError(() => error);
+      })
+    );
+  }
+
+  // Get lottery draws
+  getLotteryDraws(): Observable<any[]> {
+    return this.apiService.get<any[]>('lottery/draws').pipe(
+      map(response => {
+        if (response.success && response.data) {
+          return response.data;
+        }
+        throw new Error('Failed to fetch lottery draws');
+      }),
+      catchError(error => {
+        console.error('Error fetching lottery draws:', error);
+        return throwError(() => error);
+      })
+    );
+  }
+
+  // Legacy methods for backward compatibility
+  getHouseByIdLegacy(id: string): House | undefined {
     return this.houses().find(house => house.id === id);
   }
 
@@ -91,43 +194,58 @@ export class LotteryService {
     return this.houses().filter(house => house.status === 'ended');
   }
 
-  purchaseTicket(houseId: string): Promise<{ success: boolean; message?: string; remainingTickets?: number }> {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        const houses = this.houses();
-        const houseIndex = houses.findIndex(h => h.id === houseId);
-        
-        if (houseIndex === -1) {
-          resolve({ success: false, message: 'House not found' });
-          return;
-        }
+  // Convert HouseDto to House for backward compatibility
+  convertHouseDtoToHouse(houseDto: HouseDto): House {
+    return {
+      id: houseDto.id,
+      title: houseDto.title,
+      description: houseDto.description || '',
+      price: houseDto.price,
+      location: houseDto.location,
+      imageUrl: houseDto.images.find(img => img.isPrimary)?.imageUrl || houseDto.images[0]?.imageUrl || '',
+      images: houseDto.images.map(img => ({
+        url: img.imageUrl,
+        alt: img.altText || ''
+      })),
+      bedrooms: houseDto.bedrooms,
+      bathrooms: houseDto.bathrooms,
+      sqft: houseDto.squareFeet || 0,
+      lotteryEndDate: new Date(houseDto.lotteryEndDate),
+      totalTickets: houseDto.totalTickets,
+      soldTickets: houseDto.ticketsSold,
+      ticketPrice: houseDto.ticketPrice,
+      status: this.mapStatusToLegacy(houseDto.status)
+    };
+  }
 
-        const house = houses[houseIndex];
-        
-        if (house.status !== 'active') {
-          resolve({ success: false, message: 'Lottery is not active for this house' });
-          return;
-        }
+  private mapStatusToLegacy(status: string): 'active' | 'ended' | 'upcoming' {
+    switch (status.toLowerCase()) {
+      case 'active':
+        return 'active';
+      case 'ended':
+      case 'completed':
+        return 'ended';
+      case 'upcoming':
+      case 'pending':
+        return 'upcoming';
+      default:
+        return 'active';
+    }
+  }
 
-        if (house.soldTickets >= house.totalTickets) {
-          resolve({ success: false, message: 'No tickets remaining for this house' });
-          return;
-        }
-
-        const updatedHouses = [...houses];
-        updatedHouses[houseIndex] = {
-          ...updatedHouses[houseIndex],
-          soldTickets: updatedHouses[houseIndex].soldTickets + 1
-        };
-        this.houses.set(updatedHouses);
-        
-        const remainingTickets = house.totalTickets - (house.soldTickets + 1);
-        resolve({ 
-          success: true, 
-          message: 'Ticket purchased successfully',
-          remainingTickets 
-        });
-      }, 500);
+  // Load houses from API and update local state
+  loadHouses(params?: any): void {
+    this.getHousesFromApi(params).subscribe({
+      next: (pagedResponse) => {
+        const houses = pagedResponse.items.map(houseDto => this.convertHouseDtoToHouse(houseDto));
+        this.houses.set(houses);
+      },
+      error: (error) => {
+        console.error('Failed to load houses:', error);
+        // Set empty array on error - no fallback to mock data
+        this.houses.set([]);
+      }
     });
   }
+
 }

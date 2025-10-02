@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet, Router } from '@angular/router';
 import { TopbarComponent } from './components/topbar/topbar.component';
 import { LoadingComponent } from './components/loading/loading.component';
+import { ChatbotComponent } from './components/chatbot/chatbot.component';
+import { AccessibilityWidgetComponent } from './components/accessibility-widget/accessibility-widget.component';
 import { TranslationService } from './services/translation.service';
 import { RouteLoadingService } from './services/route-loading.service';
 // Services are available for dependency injection but not used directly in this component
@@ -14,7 +16,9 @@ import { RouteLoadingService } from './services/route-loading.service';
     CommonModule,
     RouterOutlet,
     TopbarComponent,
-    LoadingComponent
+    LoadingComponent,
+    ChatbotComponent,
+    AccessibilityWidgetComponent
   ],
   template: `
     <div class="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 transition-all duration-500 ease-in-out">
@@ -45,11 +49,6 @@ import { RouteLoadingService } from './services/route-loading.service';
             <div class="flex items-center space-x-4 mobile-footer-social">
               <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors duration-200">
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
-                </svg>
-              </a>
-              <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors duration-200">
-                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
                 </svg>
               </a>
@@ -76,15 +75,6 @@ import { RouteLoadingService } from './services/route-loading.service';
             </div>
           </div>
           
-          <div class="mb-4">
-            <!-- Community Support Section -->
-            <div>
-              <h3 class="text-blue-400 font-semibold text-base mb-2 mobile-footer-support-cause">{{ translate('footer.supportCause') }}</h3>
-              <p class="text-gray-300 text-sm leading-relaxed max-w-4xl mobile-footer-support-description">
-                {{ translate('footer.supportDescription') }}
-              </p>
-            </div>
-          </div>
           
           <!-- Footer Links Grid -->
           <div class="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6 mb-6 mobile-footer-links">
@@ -94,7 +84,6 @@ import { RouteLoadingService } from './services/route-loading.service';
               <ul class="space-y-2 text-gray-300 text-sm mobile-footer-link-text">
                 <li><button (click)="navigateToAbout()" class="hover:text-blue-400 transition-colors duration-200 hover:translate-x-1 transform inline-block text-left">{{ translate('footer.about') }}</button></li>
                 <li><button (click)="navigateToSponsorship()" class="hover:text-blue-400 transition-colors duration-200 hover:translate-x-1 transform inline-block text-left">{{ translate('footer.makeSponsorship') }}</button></li>
-                <li><button (click)="navigateToPartners()" class="hover:text-blue-400 transition-colors duration-200 hover:translate-x-1 transform inline-block text-left">{{ translate('footer.partners') }}</button></li>
                 <li><button (click)="navigateToResponsibleGambling()" class="hover:text-blue-400 transition-colors duration-200 hover:translate-x-1 transform inline-block text-left">{{ translate('footer.responsibleGaming') }}</button></li>
               </ul>
             </div>
@@ -145,42 +134,38 @@ import { RouteLoadingService } from './services/route-loading.service';
             
             <!-- App Download -->
             <div>
-              <h4 class="font-semibold mb-3 text-white mobile-footer-section-heading">{{ translate('footer.downloadApp') }}</h4>
+              <h4 class="font-semibold mb-3 text-white mobile-footer-section-heading">{{ translate('footer.comingSoon') }}</h4>
               <div class="flex flex-col space-y-2">
-                <a href="#" class="inline-block">
-                  <div class="bg-black rounded-lg px-4 py-3 flex items-center space-x-3 hover:bg-gray-800 transition-colors duration-200">
-                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
-                    </svg>
-                    <div class="text-left">
-                      <div class="text-xs text-gray-300">Download on the</div>
-                      <div class="text-sm font-semibold text-white">App Store</div>
-                    </div>
+                <div class="bg-gray-600 rounded-lg px-4 py-3 flex items-center space-x-3 opacity-60 cursor-not-allowed">
+                  <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+                  </svg>
+                  <div class="text-left">
+                    <div class="text-xs text-gray-300">Coming soon on</div>
+                    <div class="text-sm font-semibold text-white">App Store</div>
                   </div>
-                </a>
-                <a href="#" class="inline-block">
-                  <div class="bg-black rounded-lg px-4 py-3 flex items-center space-x-3 hover:bg-gray-800 transition-colors duration-200">
-                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.92 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
-                    </svg>
-                    <div class="text-left">
-                      <div class="text-xs text-gray-300">Get it on</div>
-                      <div class="text-sm font-semibold text-white">Google Play</div>
-                    </div>
+                </div>
+                <div class="bg-gray-600 rounded-lg px-4 py-3 flex items-center space-x-3 opacity-60 cursor-not-allowed">
+                  <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.92 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
+                  </svg>
+                  <div class="text-left">
+                    <div class="text-xs text-gray-300">Coming soon on</div>
+                    <div class="text-sm font-semibold text-white">Google Play</div>
                   </div>
-                </a>
+                </div>
               </div>
             </div>
           </div>
           
-          <!-- Copyright -->
-          <div class="border-t border-gray-700 pt-6 text-center">
-            <p class="text-gray-400 text-sm mobile-footer-copyright">
-              {{ translate('footer.copyright') }}
-            </p>
-          </div>
         </div>
       </footer>
+      
+      <!-- Fixed Chatbot -->
+      <app-chatbot></app-chatbot>
+      
+      <!-- Fixed Accessibility Widget -->
+      <app-accessibility-widget></app-accessibility-widget>
       
     </div>
   `,

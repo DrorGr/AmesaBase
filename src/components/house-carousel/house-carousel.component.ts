@@ -1,7 +1,8 @@
-import { Component, OnInit, OnDestroy, inject } from '@angular/core';
+import { Component, OnInit, OnDestroy, inject, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslationService } from '../../services/translation.service';
 import { MobileDetectionService } from '../../services/mobile-detection.service';
+import { LotteryService } from '../../services/lottery.service';
 
 @Component({
   selector: 'app-house-carousel',
@@ -14,11 +15,11 @@ import { MobileDetectionService } from '../../services/mobile-detection.service'
         <div class="overflow-hidden">
           <div class="flex transition-transform duration-500 ease-in-out" 
                [style.transform]="'translateX(' + (-currentSlide * 100) + '%)'">
-            @for (house of houses; track house.id; let houseIndex = $index) {
+            @for (house of houses(); track house.id; let houseIndex = $index) {
               <div class="w-full flex-shrink-0 flex flex-col lg:flex-row items-stretch gap-4 md:gap-8 relative px-2 md:px-0 mobile-carousel-container">
                 <!-- Main House Image -->
                 <div class="flex-1 max-w-5xl flex flex-col mb-4">
-                  <div class="relative overflow-hidden rounded-xl shadow-lg">
+                  <div class="relative overflow-hidden rounded-xl shadow-lg group">
                     @if (isImageLoaded(house.images[getImageIndexForHouse(houseIndex)].url)) {
                         <img
                           [src]="house.images[getImageIndexForHouse(houseIndex)].url" 
@@ -41,6 +42,31 @@ import { MobileDetectionService } from '../../services/mobile-detection.service'
                         (load)="onImageLoad($event)"
                         (error)="onImageError($event)">
                     }
+                    
+                    <!-- Location Icon -->
+                    <button 
+                      (click)="openLocationMap(house)"
+                      class="absolute top-4 left-4 bg-red-500 hover:bg-red-600 text-white p-2 rounded-full shadow-lg transition-colors duration-200 z-10 cursor-pointer focus:outline-none focus:ring-2 focus:ring-red-400"
+                      [attr.aria-label]="'View ' + house.title + ' location on map'">
+                      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                      </svg>
+                    </button>
+                    
+                    <!-- Status Badge -->
+                    <div class="absolute top-4 right-4 z-20">
+                      <span class="bg-emerald-500 text-white px-3 py-2 rounded-full text-sm font-semibold shadow-lg">
+                        {{ getStatusText(house) }}
+                      </span>
+                    </div>
+                    
+                    <!-- Currently Viewers Hover Overlay -->
+                    <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-xl">
+                      <div class="text-white text-center">
+                        <div class="text-lg font-semibold">{{ translate('house.currentlyViewing') }}</div>
+                        <div class="text-2xl font-bold">{{ getCurrentViewers() }}</div>
+                      </div>
+                    </div>
                   </div>
                   
                   <!-- Image Navigation Below Main Image -->
@@ -104,51 +130,52 @@ import { MobileDetectionService } from '../../services/mobile-detection.service'
                     <!-- House Title -->
                     <div class="mb-4 md:mb-4">
                       <h2 class="text-4xl md:text-4xl font-bold text-gray-900 dark:text-white text-center mobile-carousel-title">
-                        {{ house.name }}
+                        {{ house.title }}
                       </h2>
                     </div>
                     
-                    <p class="text-gray-600 dark:text-gray-300 mb-6 md:mb-6 leading-relaxed text-xl md:text-2xl mobile-carousel-description">
-                      {{ house.description }}
+                    <p class="text-gray-700 dark:text-gray-200 mb-6 md:mb-6 leading-relaxed text-xl md:text-2xl mobile-carousel-description">
+                      {{ translate('house.propertyOfYourOwn') }}
                     </p>
                   </div>
                   
                   <!-- Lottery Information -->
                   <div class="space-y-2 md:space-y-2 flex-grow flex flex-col justify-center">
                     <div class="flex justify-between items-center py-3 md:py-2 border-b border-gray-200 dark:border-gray-700 mobile-carousel-info">
-                      <span class="text-gray-600 dark:text-gray-400 text-xl md:text-2xl font-large">Property Value</span>
+                      <span class="text-gray-600 dark:text-gray-400 text-xl md:text-2xl font-large">{{ translate('carousel.propertyValue') }}</span>
                       <span class="font-bold text-gray-900 dark:text-white text-xl md:text-3xl">€{{ formatPrice(house.price) }}</span>
                     </div>
                     <div class="flex justify-between items-center py-3 md:py-2 border-b border-gray-200 dark:border-gray-700 mobile-carousel-info">
-                      <span class="text-gray-600 dark:text-gray-400 text-xl md:text-2xl font-large">Ticket Price</span>
+                      <span class="text-gray-600 dark:text-gray-400 text-xl md:text-2xl font-large">{{ translate('house.city') }}</span>
+                      <span class="font-bold text-gray-900 dark:text-white text-xl md:text-3xl">{{ house.city || 'Manhattan' }}</span>
+                    </div>
+                    <div class="flex justify-between items-center py-3 md:py-2 border-b border-gray-200 dark:border-gray-700 mobile-carousel-info">
+                      <span class="text-gray-600 dark:text-gray-400 text-xl md:text-2xl font-large">{{ translate('house.address') }}</span>
+                      <span class="font-bold text-gray-900 dark:text-white text-xl md:text-3xl">{{ house.address || '123 Park Ave' }}</span>
+                    </div>
+                    <div class="flex justify-between items-center py-3 md:py-2 border-b border-gray-200 dark:border-gray-700 mobile-carousel-info">
+                      <span class="text-gray-600 dark:text-gray-400 text-xl md:text-2xl font-large">{{ translate('carousel.ticketPrice') }}</span>
                       <span class="font-bold text-blue-600 dark:text-blue-400 text-xl md:text-3xl">€{{ house.ticketPrice }}</span>
                     </div>
                     <div class="flex justify-between items-center py-3 md:py-2 border-b border-gray-200 dark:border-gray-700 mobile-carousel-info">
-                      <span class="text-gray-600 dark:text-gray-400 text-xl md:text-2xl font-large">Tickets Sold</span>
-                      <span class="font-bold text-gray-900 dark:text-white text-xl md:text-3xl">{{ house.soldTickets }}/{{ house.totalTickets }}</span>
+                      <span class="text-gray-600 dark:text-gray-400 text-xl md:text-2xl font-large">{{ translate('house.odds') }}</span>
+                      <span class="font-bold text-gray-900 dark:text-white text-xl md:text-3xl">{{ getOdds(house) }}</span>
                     </div>
                     <div class="flex justify-between items-center py-3 md:py-2 border-b border-gray-200 dark:border-gray-700 mobile-carousel-info">
-                      <span class="text-gray-600 dark:text-gray-400 text-xl md:text-2xl font-large">Draw Date</span>
-                      <span class="font-bold text-orange-600 dark:text-orange-400 text-xl md:text-3xl">{{ formatDate(house.lotteryEndDate) }}</span>
+                      <span class="text-gray-600 dark:text-gray-400 text-xl md:text-2xl font-large">{{ translate('house.lotteryCountdown') }}</span>
+                      <span class="font-bold text-orange-600 dark:text-orange-400 text-xl md:text-3xl font-mono">{{ getLotteryCountdown(house) }}</span>
                     </div>
                   
-                    <!-- Progress Bar -->
+                    <!-- Tickets Available -->
                     <div class="mt-4 md:mt-3">
-                      <div class="flex justify-between text-xl md:text-xl text-gray-600 dark:text-gray-400 mb-3 md:mb-2 font-medium">
-                        <span>Progress</span>
-                        <span>{{ getTicketProgressForHouse(house) }}%</span>
-                      </div>
-                      <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-4 md:h-3 mobile-carousel-progress">
-                        <div 
-                          class="bg-blue-600 dark:bg-blue-500 h-4 md:h-3 rounded-full transition-all duration-300"
-                          [style.width.%]="getTicketProgressForHouse(house)">
-                        </div>
+                      <div class="text-center text-xl md:text-xl text-orange-600 dark:text-orange-400 font-semibold">
+                        {{ getTicketsAvailableText(house) }}
                       </div>
                     </div>
                     
                     <!-- Buy Ticket Button -->
                     <button class="w-full mt-6 md:mt-4 bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-600 text-white py-6 md:py-4 px-6 md:px-6 rounded-lg font-bold transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5 text-2xl md:text-2xl min-h-[72px] mobile-carousel-button">
-                      Buy Ticket - €{{ house.ticketPrice }}
+                      {{ translate('carousel.buyTicket') }} - €{{ house.ticketPrice }}
                     </button>
                   </div>
                 </div>
@@ -172,7 +199,7 @@ import { MobileDetectionService } from '../../services/mobile-detection.service'
             
             <!-- Container Dots -->
             <div class="flex space-x-2">
-              @for (house of houses; track house.id) {
+              @for (house of houses(); track house.id) {
                 <button 
                   (click)="goToSlide($index)"
                   class="w-3 h-3 rounded-full transition-all"
@@ -200,7 +227,7 @@ import { MobileDetectionService } from '../../services/mobile-detection.service'
         <div class="hidden md:block">
           <!-- Desktop Container Dots - Bottom center -->
           <div class="flex justify-center space-x-3 py-4">
-            @for (house of houses; track house.id) {
+            @for (house of houses(); track house.id) {
               <button 
                 (click)="goToSlide($index)"
                 class="w-4 h-4 rounded-full transition-all hover:scale-125"
@@ -409,6 +436,7 @@ import { MobileDetectionService } from '../../services/mobile-detection.service'
 export class HouseCarouselComponent implements OnInit, OnDestroy {
   private translationService = inject(TranslationService);
   private mobileDetectionService = inject(MobileDetectionService);
+  private lotteryService = inject(LotteryService);
   
   // Use global mobile detection
   isMobile = this.mobileDetectionService.isMobile;
@@ -417,114 +445,42 @@ export class HouseCarouselComponent implements OnInit, OnDestroy {
   currentHouseImageIndex = 0;
   isTransitioning = false;
   private autoSlideInterval: any;
+  private countdownInterval?: number;
   private intersectionObserver: IntersectionObserver | null = null;
   loadedImages = new Set<string>();
 
-  houses = [
-    {
-      id: 1,
-      name: 'Modern Downtown Condo',
-      description: 'Stunning 2-bedroom condo in the heart of downtown with city views and modern amenities. Perfect for urban professionals seeking luxury living.',
-      price: 450000,
-      ticketPrice: 50,
-      totalTickets: 1000,
-      soldTickets: 650,
-      lotteryEndDate: new Date('2025-02-15'),
-      images: [
-        {
-          url: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop',
-          alt: 'Modern downtown condo exterior'
-        },
-        {
-          url: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop',
-          alt: 'Modern living room'
-        },
-        {
-          url: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop',
-          alt: 'Modern kitchen'
-        },
-        {
-          url: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&h=600&fit=crop',
-          alt: 'Modern bedroom'
-        }
-      ]
-    },
-    {
-      id: 2,
-      name: 'Suburban Family Home',
-      description: 'Beautiful 4-bedroom family home with large backyard and garage in quiet neighborhood. Ideal for growing families.',
-      price: 680000,
-      ticketPrice: 75,
-      totalTickets: 1500,
-      soldTickets: 890,
-      lotteryEndDate: new Date('2025-02-20'),
-      images: [
-        {
-          url: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&h=600&fit=crop',
-          alt: 'Suburban family home exterior'
-        },
-        {
-          url: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop',
-          alt: 'Family living room'
-        },
-        {
-          url: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop',
-          alt: 'Family kitchen'
-        },
-        {
-          url: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop',
-          alt: 'Family dining room'
-        }
-      ]
-    },
-    {
-      id: 3,
-      name: 'Luxury Waterfront Villa',
-      description: 'Exclusive waterfront villa with private beach access and panoramic ocean views. The ultimate in luxury living.',
-      price: 1200000,
-      ticketPrice: 100,
-      totalTickets: 2000,
-      soldTickets: 1245,
-      lotteryEndDate: new Date('2025-03-01'),
-      images: [
-        {
-          url: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&h=600&fit=crop',
-          alt: 'Luxury waterfront villa exterior'
-        },
-        {
-          url: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop',
-          alt: 'Luxury living area'
-        },
-        {
-          url: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&h=600&fit=crop',
-          alt: 'Luxury master bedroom'
-        },
-        {
-          url: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&h=600&fit=crop',
-          alt: 'Luxury bathroom'
-        }
-      ]
-    }
-  ];
+  // Use computed signal to get active houses from lottery service
+  houses = computed(() => {
+    const allHouses = this.lotteryService.getHouses()();
+    return allHouses.filter(house => house.status === 'active');
+  });
 
   ngOnInit() {
     this.startAutoSlide();
     this.setupIntersectionObserver();
     // Load the first slide images immediately
     setTimeout(() => this.loadCurrentSlideImages(), 100);
+    // Start countdown timer
+    this.countdownInterval = window.setInterval(() => {
+      // Force change detection by updating a property
+    }, 1000);
   }
 
   ngOnDestroy() {
     this.stopAutoSlide();
+    if (this.countdownInterval) {
+      clearInterval(this.countdownInterval);
+    }
     if (this.intersectionObserver) {
       this.intersectionObserver.disconnect();
     }
   }
 
+
   private startAutoSlide() {
     this.autoSlideInterval = setInterval(() => {
       this.nextSlide();
-    }, 5000);
+    }, 8000);
   }
 
   private stopAutoSlide() {
@@ -613,7 +569,7 @@ export class HouseCarouselComponent implements OnInit, OnDestroy {
   }
   
   getCurrentHouse() {
-    return this.houses[this.currentSlide];
+    return this.houses()[this.currentSlide];
   }
   
   getCurrentHouseImage() {
@@ -621,21 +577,21 @@ export class HouseCarouselComponent implements OnInit, OnDestroy {
   }
   
   nextSlide() {
-    this.currentSlide = (this.currentSlide + 1) % this.houses.length;
+    this.currentSlide = (this.currentSlide + 1) % this.houses().length;
     this.currentHouseImageIndex = 0; // Reset to first image when changing houses
     this.resetAutoSlide();
     this.loadCurrentSlideImages();
   }
   
   previousSlide() {
-    this.currentSlide = this.currentSlide === 0 ? this.houses.length - 1 : this.currentSlide - 1;
+    this.currentSlide = this.currentSlide === 0 ? this.houses().length - 1 : this.currentSlide - 1;
     this.currentHouseImageIndex = 0; // Reset to first image when changing houses
     this.resetAutoSlide();
     this.loadCurrentSlideImages();
   }
   
   goToSlide(index: number) {
-    if (index < 0 || index >= this.houses.length) return;
+    if (index < 0 || index >= this.houses().length) return;
     this.currentSlide = index;
     this.currentHouseImageIndex = 0; // Reset to first image when changing houses
     this.resetAutoSlide();
@@ -680,5 +636,74 @@ export class HouseCarouselComponent implements OnInit, OnDestroy {
   
   getImageIndexForHouse(houseIndex: number): number {
     return houseIndex === this.currentSlide ? this.currentHouseImageIndex : 0;
+  }
+
+  getOdds(house: any): string {
+    const totalTickets = house.totalTickets;
+    return `1:${totalTickets.toLocaleString()}`;
+  }
+
+  getRemainingTickets(house: any): number {
+    return house.totalTickets - house.soldTickets;
+  }
+
+  getLotteryCountdown(house: any): string {
+    const now = new Date().getTime();
+    const endTime = new Date(house.lotteryEndDate).getTime();
+    const timeLeft = endTime - now;
+
+    if (timeLeft <= 0) {
+      return '00:00:00';
+    }
+
+    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+    // Show seconds only when less than 24 hours left
+    if (days === 0 && hours < 24) {
+      return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    } else {
+      return `${days.toString().padStart(2, '0')}:${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+    }
+  }
+
+  getCurrentViewers(): number {
+    // Generate a random number of viewers between 5-50 for demo purposes
+    return Math.floor(Math.random() * 46) + 5;
+  }
+
+  getTicketsAvailableText(house: any): string {
+    const remaining = this.getRemainingTickets(house);
+    const template = this.translate('house.onlyTicketsAvailable');
+    return template.replace('{count}', remaining.toLocaleString());
+  }
+
+  getStatusText(house: any): string {
+    switch (house.status) {
+      case 'active':
+        return this.translate('house.active');
+      case 'ended':
+        return this.translate('house.ended');
+      case 'upcoming':
+        return this.translate('house.upcoming');
+      default:
+        return this.translate('house.active');
+    }
+  }
+
+  openLocationMap(house: any): void {
+    const address = house.address || house.location || house.title;
+    const city = house.city || 'New York';
+    
+    // Create a search query for Google Maps
+    const searchQuery = encodeURIComponent(`${address}, ${city}`);
+    const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${searchQuery}`;
+    
+    // Open in a new tab
+    window.open(googleMapsUrl, '_blank', 'noopener,noreferrer');
+    
+    console.log(`Opening location map for: ${address}, ${city}`);
   }
 }

@@ -1,6 +1,6 @@
 import { Component, inject, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TranslationService, Language } from '../../services/translation.service';
+import { TranslationService, Language, LanguageInfo } from '../../services/translation.service';
 import { MobileDetectionService } from '../../services/mobile-detection.service';
 
 @Component({
@@ -33,7 +33,7 @@ import { MobileDetectionService } from '../../services/mobile-detection.service'
               [class.text-blue-600]="currentLanguage() === language.code"
               [class.dark:text-blue-400]="currentLanguage() === language.code">
               <div class="w-5 h-5 rounded-full overflow-hidden flex-shrink-0">
-                <img [src]="language.flag" [alt]="language.code" class="w-full h-full object-cover">
+                <img [src]="language.flagUrl" [alt]="language.code" class="w-full h-full object-cover">
               </div>
               <span class="font-medium">{{ language.code.toUpperCase() }}</span>
               <span class="text-xs text-gray-500 dark:text-gray-400 ml-auto">{{ language.name }}</span>
@@ -85,8 +85,8 @@ export class LanguageSwitcherComponent {
   private mobileDetectionService = inject(MobileDetectionService);
   
   isDropdownOpen = false;
-  currentLanguage = this.translationService.getCurrentLanguage();
-  availableLanguages = this.translationService.getAvailableLanguages();
+  currentLanguage = this.translationService.getCurrentLanguage;
+  availableLanguages: LanguageInfo[] = this.translationService.getAvailableLanguages();
   
   // Use global mobile detection
   isMobile = this.mobileDetectionService.isMobile;
@@ -95,14 +95,14 @@ export class LanguageSwitcherComponent {
     this.isDropdownOpen = !this.isDropdownOpen;
   }
 
-  selectLanguage(language: Language) {
-    this.translationService.setLanguage(language);
+  selectLanguage(languageCode: string) {
+    this.translationService.setLanguage(languageCode as Language);
     this.isDropdownOpen = false;
   }
 
   getCurrentLanguageFlag(): string {
     const current = this.availableLanguages.find(lang => lang.code === this.currentLanguage());
-    return current?.flag || 'https://flagcdn.com/w40/us.png';
+    return current?.flagUrl || 'https://flagcdn.com/w40/us.png';
   }
 
   getCurrentLanguageCode(): string {

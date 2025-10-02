@@ -1,0 +1,22 @@
+[2025-09-28 00:00:10.346 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 00:01:10.230 +03:00 INF] Lottery draw service running... {"SourceContext":"AmesaBackend.Services.LotteryDrawService"}
+[2025-09-28 00:01:10.355 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 00:02:10.359 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 00:03:10.365 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 00:04:10.382 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 00:05:10.383 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 00:06:10.244 +03:00 INF] Lottery draw service running... {"SourceContext":"AmesaBackend.Services.LotteryDrawService"}
+[2025-09-28 00:06:10.397 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 00:07:10.402 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 00:08:10.413 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 00:09:10.421 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 00:10:10.427 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 00:11:10.255 +03:00 INF] Lottery draw service running... {"SourceContext":"AmesaBackend.Services.LotteryDrawService"}
+[2025-09-28 00:11:10.429 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 00:12:10.445 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 11:23:51.585 +03:00 INF] Request fed34eea started: OPTIONS /api/v1/houses from ::1 {"SourceContext":"AmesaBackend.Middleware.RequestLoggingMiddleware","RequestPath":"/api/v1/houses","ConnectionId":"0HNFU0OQKFNND"}
+[2025-09-28 11:23:51.586 +03:00 INF] Request fed34eea completed: OPTIONS /api/v1/houses - 204 in 1ms {"SourceContext":"AmesaBackend.Middleware.RequestLoggingMiddleware","RequestPath":"/api/v1/houses","ConnectionId":"0HNFU0OQKFNND"}
+[2025-09-28 11:23:51.593 +03:00 INF] Request 4f860c03 started: GET /api/v1/houses from ::1 {"SourceContext":"AmesaBackend.Middleware.RequestLoggingMiddleware","RequestPath":"/api/v1/houses","ConnectionId":"0HNFU0OQKFNND"}
+[2025-09-28 11:23:51.754 +03:00 INF] Request 4f860c03 completed: GET /api/v1/houses - 200 in 161ms {"SourceContext":"AmesaBackend.Middleware.RequestLoggingMiddleware","RequestPath":"/api/v1/houses","ConnectionId":"0HNFU0OQKFNND"}
+[2025-09-28 11:24:10.791 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 11:25:10.796 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}

@@ -1,0 +1,177 @@
+2025-09-28 12:27:34.145 +03:00 [WRN] The foreign key property 'LotteryDraw.HouseId1' was created in shadow state because a conflicting property with the simple name 'HouseId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-09-28 12:27:34.226 +03:00 [WRN] The foreign key property 'LotteryTicket.HouseId1' was created in shadow state because a conflicting property with the simple name 'HouseId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-09-28 12:27:34.229 +03:00 [WRN] The foreign key property 'LotteryTicket.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-09-28 12:27:34.230 +03:00 [WRN] The foreign key property 'Transaction.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-09-28 12:27:34.230 +03:00 [WRN] The foreign key property 'UserAddress.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-09-28 12:27:34.230 +03:00 [WRN] The foreign key property 'UserNotification.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-09-28 12:27:34.230 +03:00 [WRN] The foreign key property 'UserPaymentMethod.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-09-28 12:27:34.230 +03:00 [WRN] The foreign key property 'UserPhone.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-09-28 12:27:34.231 +03:00 [WRN] The foreign key property 'UserPromotion.PromotionId1' was created in shadow state because a conflicting property with the simple name 'PromotionId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-09-28 12:27:34.231 +03:00 [WRN] The foreign key property 'UserPromotion.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-09-28 12:27:34.231 +03:00 [WRN] The foreign key property 'UserSession.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-09-28 12:27:35.048 +03:00 [WRN] The foreign key property 'LotteryDraw.HouseId1' was created in shadow state because a conflicting property with the simple name 'HouseId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-09-28 12:27:35.048 +03:00 [WRN] The foreign key property 'LotteryTicket.HouseId1' was created in shadow state because a conflicting property with the simple name 'HouseId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-09-28 12:27:35.049 +03:00 [WRN] The foreign key property 'LotteryTicket.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-09-28 12:27:35.049 +03:00 [WRN] The foreign key property 'Transaction.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-09-28 12:27:35.049 +03:00 [WRN] The foreign key property 'UserAddress.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-09-28 12:27:35.049 +03:00 [WRN] The foreign key property 'UserNotification.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-09-28 12:27:35.049 +03:00 [WRN] The foreign key property 'UserPaymentMethod.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-09-28 12:27:35.049 +03:00 [WRN] The foreign key property 'UserPhone.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-09-28 12:27:35.049 +03:00 [WRN] The foreign key property 'UserPromotion.PromotionId1' was created in shadow state because a conflicting property with the simple name 'PromotionId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-09-28 12:27:35.050 +03:00 [WRN] The foreign key property 'UserPromotion.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-09-28 12:27:35.050 +03:00 [WRN] The foreign key property 'UserSession.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-09-28 12:27:44.523 +03:00 [INF] Database setup and seeding completed successfully
+2025-09-28 12:27:44.529 +03:00 [INF] Starting Amesa Lottery API
+2025-09-28 12:27:44.600 +03:00 [INF] Lottery draw service running...
+2025-09-28 12:27:44.606 +03:00 [INF] Notification background service running...
+2025-09-28 12:27:58.917 +03:00 [INF] Request 77a0a08a started: GET /api/v1/translations/languages from ::1
+2025-09-28 12:27:59.306 +03:00 [INF] Request 77a0a08a completed: GET /api/v1/translations/languages - 200 in 404ms
+2025-09-28 12:27:59.606 +03:00 [INF] Request d4de0955 started: GET /api/v1/translations/en from ::1
+2025-09-28 12:27:59.821 +03:00 [INF] Request d4de0955 completed: GET /api/v1/translations/en - 200 in 215ms
+2025-09-28 12:28:44.621 +03:00 [INF] Notification background service running...
+2025-09-28 12:28:45.780 +03:00 [INF] Request 8c6a4756 started: OPTIONS /api/v1/houses from ::1
+2025-09-28 12:28:45.796 +03:00 [INF] Request 8c6a4756 completed: OPTIONS /api/v1/houses - 204 in 15ms
+2025-09-28 12:28:45.803 +03:00 [INF] Request 5f2ec848 started: GET /api/v1/houses from ::1
+2025-09-28 12:28:47.038 +03:00 [INF] Request 5f2ec848 completed: GET /api/v1/houses - 200 in 1234ms
+2025-09-28 12:29:44.634 +03:00 [INF] Notification background service running...
+2025-09-28 12:30:44.646 +03:00 [INF] Notification background service running...
+2025-09-28 12:31:41.117 +03:00 [INF] Request 7dca70d3 started: OPTIONS /api/v1/houses from ::1
+2025-09-28 12:31:41.118 +03:00 [INF] Request 7dca70d3 completed: OPTIONS /api/v1/houses - 204 in 1ms
+2025-09-28 12:31:41.127 +03:00 [INF] Request 5881c05d started: GET /api/v1/houses from ::1
+2025-09-28 12:31:41.212 +03:00 [INF] Request 5881c05d completed: GET /api/v1/houses - 200 in 84ms
+2025-09-28 12:31:44.656 +03:00 [INF] Notification background service running...
+2025-09-28 12:32:23.482 +03:00 [INF] Request a73736d1 started: OPTIONS /api/v1/houses from ::1
+2025-09-28 12:32:23.482 +03:00 [INF] Request a73736d1 completed: OPTIONS /api/v1/houses - 204 in 0ms
+2025-09-28 12:32:25.899 +03:00 [INF] Request 422d9978 started: OPTIONS /api/v1/houses from ::1
+2025-09-28 12:32:25.899 +03:00 [INF] Request 422d9978 completed: OPTIONS /api/v1/houses - 204 in 0ms
+2025-09-28 12:32:30.755 +03:00 [INF] Request 5ce4df2d started: OPTIONS /api/v1/houses from ::1
+2025-09-28 12:32:30.756 +03:00 [INF] Request 5ce4df2d completed: OPTIONS /api/v1/houses - 204 in 0ms
+2025-09-28 12:32:44.608 +03:00 [INF] Lottery draw service running...
+2025-09-28 12:32:44.669 +03:00 [INF] Notification background service running...
+2025-09-28 12:33:44.671 +03:00 [INF] Notification background service running...
+2025-09-28 12:34:44.674 +03:00 [INF] Notification background service running...
+2025-09-28 12:35:44.680 +03:00 [INF] Notification background service running...
+2025-09-28 12:35:45.998 +03:00 [INF] Request e622b072 started: GET /api/translations/en from ::1
+2025-09-28 12:35:46.001 +03:00 [INF] Request e622b072 completed: GET /api/translations/en - 404 in 2ms
+2025-09-28 12:35:46.331 +03:00 [INF] Request 666ee792 started: OPTIONS /api/v1/houses from ::1
+2025-09-28 12:35:46.332 +03:00 [INF] Request 666ee792 completed: OPTIONS /api/v1/houses - 204 in 0ms
+2025-09-28 12:36:44.686 +03:00 [INF] Notification background service running...
+2025-09-28 12:37:19.973 +03:00 [INF] Request d8e83af8 started: GET /api/v1/translations/en from ::1
+2025-09-28 12:37:19.995 +03:00 [INF] Request d8e83af8 completed: GET /api/v1/translations/en - 200 in 22ms
+2025-09-28 12:37:44.619 +03:00 [INF] Lottery draw service running...
+2025-09-28 12:37:44.693 +03:00 [INF] Notification background service running...
+2025-09-28 12:38:00.654 +03:00 [INF] Request 326ac464 started: GET /api/translations/en from ::1
+2025-09-28 12:38:00.655 +03:00 [INF] Request 326ac464 completed: GET /api/translations/en - 404 in 0ms
+2025-09-28 12:38:00.865 +03:00 [INF] Request 09305f5e started: OPTIONS /api/v1/houses from ::1
+2025-09-28 12:38:00.866 +03:00 [INF] Request 09305f5e completed: OPTIONS /api/v1/houses - 204 in 0ms
+2025-09-28 12:38:29.732 +03:00 [INF] Request 7dc1637e started: GET /api/translations/pl from ::1
+2025-09-28 12:38:29.736 +03:00 [INF] Request 7dc1637e completed: GET /api/translations/pl - 404 in 4ms
+2025-09-28 12:38:44.699 +03:00 [INF] Notification background service running...
+2025-09-28 12:38:58.582 +03:00 [INF] Request 7e0bfe13 started: GET /api/translations/en from ::1
+2025-09-28 12:38:58.583 +03:00 [INF] Request 7e0bfe13 completed: GET /api/translations/en - 404 in 1ms
+2025-09-28 12:38:58.715 +03:00 [INF] Request 3912640f started: OPTIONS /api/v1/houses from ::1
+2025-09-28 12:38:58.718 +03:00 [INF] Request 3912640f completed: OPTIONS /api/v1/houses - 204 in 3ms
+2025-09-28 12:39:44.705 +03:00 [INF] Notification background service running...
+[2025-09-28 12:40:24.257 +03:00 WRN] The foreign key property 'LotteryDraw.HouseId1' was created in shadow state because a conflicting property with the simple name 'HouseId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core. {"EventId":{"Id":10625,"Name":"Microsoft.EntityFrameworkCore.Model.Validation.ShadowForeignKeyPropertyCreated"},"SourceContext":"Microsoft.EntityFrameworkCore.Model.Validation"}
+[2025-09-28 12:40:24.345 +03:00 WRN] The foreign key property 'LotteryTicket.HouseId1' was created in shadow state because a conflicting property with the simple name 'HouseId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core. {"EventId":{"Id":10625,"Name":"Microsoft.EntityFrameworkCore.Model.Validation.ShadowForeignKeyPropertyCreated"},"SourceContext":"Microsoft.EntityFrameworkCore.Model.Validation"}
+[2025-09-28 12:40:24.348 +03:00 WRN] The foreign key property 'LotteryTicket.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core. {"EventId":{"Id":10625,"Name":"Microsoft.EntityFrameworkCore.Model.Validation.ShadowForeignKeyPropertyCreated"},"SourceContext":"Microsoft.EntityFrameworkCore.Model.Validation"}
+[2025-09-28 12:40:24.349 +03:00 WRN] The foreign key property 'Transaction.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core. {"EventId":{"Id":10625,"Name":"Microsoft.EntityFrameworkCore.Model.Validation.ShadowForeignKeyPropertyCreated"},"SourceContext":"Microsoft.EntityFrameworkCore.Model.Validation"}
+[2025-09-28 12:40:24.349 +03:00 WRN] The foreign key property 'UserAddress.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core. {"EventId":{"Id":10625,"Name":"Microsoft.EntityFrameworkCore.Model.Validation.ShadowForeignKeyPropertyCreated"},"SourceContext":"Microsoft.EntityFrameworkCore.Model.Validation"}
+[2025-09-28 12:40:24.349 +03:00 WRN] The foreign key property 'UserNotification.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core. {"EventId":{"Id":10625,"Name":"Microsoft.EntityFrameworkCore.Model.Validation.ShadowForeignKeyPropertyCreated"},"SourceContext":"Microsoft.EntityFrameworkCore.Model.Validation"}
+[2025-09-28 12:40:24.349 +03:00 WRN] The foreign key property 'UserPaymentMethod.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core. {"EventId":{"Id":10625,"Name":"Microsoft.EntityFrameworkCore.Model.Validation.ShadowForeignKeyPropertyCreated"},"SourceContext":"Microsoft.EntityFrameworkCore.Model.Validation"}
+[2025-09-28 12:40:24.350 +03:00 WRN] The foreign key property 'UserPhone.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core. {"EventId":{"Id":10625,"Name":"Microsoft.EntityFrameworkCore.Model.Validation.ShadowForeignKeyPropertyCreated"},"SourceContext":"Microsoft.EntityFrameworkCore.Model.Validation"}
+[2025-09-28 12:40:24.350 +03:00 WRN] The foreign key property 'UserPromotion.PromotionId1' was created in shadow state because a conflicting property with the simple name 'PromotionId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core. {"EventId":{"Id":10625,"Name":"Microsoft.EntityFrameworkCore.Model.Validation.ShadowForeignKeyPropertyCreated"},"SourceContext":"Microsoft.EntityFrameworkCore.Model.Validation"}
+[2025-09-28 12:40:24.350 +03:00 WRN] The foreign key property 'UserPromotion.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core. {"EventId":{"Id":10625,"Name":"Microsoft.EntityFrameworkCore.Model.Validation.ShadowForeignKeyPropertyCreated"},"SourceContext":"Microsoft.EntityFrameworkCore.Model.Validation"}
+[2025-09-28 12:40:24.350 +03:00 WRN] The foreign key property 'UserSession.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core. {"EventId":{"Id":10625,"Name":"Microsoft.EntityFrameworkCore.Model.Validation.ShadowForeignKeyPropertyCreated"},"SourceContext":"Microsoft.EntityFrameworkCore.Model.Validation"}
+[2025-09-28 12:40:25.152 +03:00 INF] Database setup and seeding completed successfully {}
+[2025-09-28 12:40:25.160 +03:00 INF] Starting Amesa Lottery API {}
+[2025-09-28 12:40:25.233 +03:00 INF] Lottery draw service running... {"SourceContext":"AmesaBackend.Services.LotteryDrawService"}
+[2025-09-28 12:40:25.239 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 12:40:59.117 +03:00 INF] Request 9a4789be started: GET /api/v1/translations/en from ::1 {"SourceContext":"AmesaBackend.Middleware.RequestLoggingMiddleware","RequestPath":"/api/v1/translations/en","ConnectionId":"0HNFUECGKRT41"}
+[2025-09-28 12:40:59.637 +03:00 INF] Request 9a4789be completed: GET /api/v1/translations/en - 200 in 531ms {"SourceContext":"AmesaBackend.Middleware.RequestLoggingMiddleware","RequestPath":"/api/v1/translations/en","ConnectionId":"0HNFUECGKRT41"}
+[2025-09-28 12:41:25.248 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 12:42:25.259 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 12:43:25.267 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 12:44:25.267 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 12:45:25.243 +03:00 INF] Lottery draw service running... {"SourceContext":"AmesaBackend.Services.LotteryDrawService"}
+[2025-09-28 12:45:25.279 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 12:46:25.284 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 12:47:25.290 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 12:48:25.306 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 12:49:25.317 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 12:50:25.243 +03:00 INF] Lottery draw service running... {"SourceContext":"AmesaBackend.Services.LotteryDrawService"}
+[2025-09-28 12:50:25.318 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 12:51:25.326 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 12:52:25.333 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 12:53:25.336 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 12:54:25.345 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 12:55:25.259 +03:00 INF] Lottery draw service running... {"SourceContext":"AmesaBackend.Services.LotteryDrawService"}
+[2025-09-28 12:55:25.350 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 12:56:25.359 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 12:57:25.363 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 12:58:25.366 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 12:59:25.368 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:00:25.273 +03:00 INF] Lottery draw service running... {"SourceContext":"AmesaBackend.Services.LotteryDrawService"}
+[2025-09-28 13:00:25.369 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:01:25.376 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:02:25.392 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:03:25.392 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:04:25.394 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:05:25.276 +03:00 INF] Lottery draw service running... {"SourceContext":"AmesaBackend.Services.LotteryDrawService"}
+[2025-09-28 13:05:25.400 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:06:25.414 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:07:25.423 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:08:25.424 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:09:25.430 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:10:25.280 +03:00 INF] Lottery draw service running... {"SourceContext":"AmesaBackend.Services.LotteryDrawService"}
+[2025-09-28 13:10:25.437 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:11:25.440 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:12:25.442 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:13:25.445 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:14:25.447 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:15:25.293 +03:00 INF] Lottery draw service running... {"SourceContext":"AmesaBackend.Services.LotteryDrawService"}
+[2025-09-28 13:15:25.450 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:16:25.459 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:17:25.463 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:18:25.464 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:19:25.468 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:20:25.296 +03:00 INF] Lottery draw service running... {"SourceContext":"AmesaBackend.Services.LotteryDrawService"}
+[2025-09-28 13:20:25.479 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:21:25.480 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:22:25.480 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:23:25.489 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:24:25.493 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:25:25.299 +03:00 INF] Lottery draw service running... {"SourceContext":"AmesaBackend.Services.LotteryDrawService"}
+[2025-09-28 13:25:25.497 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:26:25.503 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:27:25.504 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:28:25.508 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:29:25.515 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:30:25.301 +03:00 INF] Lottery draw service running... {"SourceContext":"AmesaBackend.Services.LotteryDrawService"}
+[2025-09-28 13:30:25.520 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:31:25.522 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:32:25.526 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:33:25.541 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:34:25.544 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:35:25.307 +03:00 INF] Lottery draw service running... {"SourceContext":"AmesaBackend.Services.LotteryDrawService"}
+[2025-09-28 13:35:25.545 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:36:25.549 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:37:25.550 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:38:25.565 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:39:25.568 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:40:25.318 +03:00 INF] Lottery draw service running... {"SourceContext":"AmesaBackend.Services.LotteryDrawService"}
+[2025-09-28 13:40:25.573 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:41:25.574 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:42:25.578 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:43:25.579 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:44:25.579 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:45:25.325 +03:00 INF] Lottery draw service running... {"SourceContext":"AmesaBackend.Services.LotteryDrawService"}
+[2025-09-28 13:45:25.582 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:46:25.583 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:47:25.587 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:48:25.594 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 13:48:26.405 +03:00 INF] Request 849c7ef1 started: GET /api/v1/translations/pl from ::1 {"SourceContext":"AmesaBackend.Middleware.RequestLoggingMiddleware","RequestPath":"/api/v1/translations/pl","ConnectionId":"0HNFUECGKRT42"}
+[2025-09-28 13:48:26.599 +03:00 INF] Request 849c7ef1 completed: GET /api/v1/translations/pl - 200 in 194ms {"SourceContext":"AmesaBackend.Middleware.RequestLoggingMiddleware","RequestPath":"/api/v1/translations/pl","ConnectionId":"0HNFUECGKRT42"}
+[2025-09-28 13:48:26.760 +03:00 INF] Request 49e68f27 started: GET /api/v1/translations/languages from ::1 {"SourceContext":"AmesaBackend.Middleware.RequestLoggingMiddleware","RequestPath":"/api/v1/translations/languages","ConnectionId":"0HNFUECGKRT42"}
+[2025-09-28 13:48:26.883 +03:00 INF] Request 49e68f27 completed: GET /api/v1/translations/languages - 200 in 122ms {"SourceContext":"AmesaBackend.Middleware.RequestLoggingMiddleware","RequestPath":"/api/v1/translations/languages","ConnectionId":"0HNFUECGKRT42"}
+[2025-09-28 15:56:38.717 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}

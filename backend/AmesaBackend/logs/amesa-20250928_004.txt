@@ -1,0 +1,290 @@
+2025-09-28 11:47:03.529 +03:00 [WRN] The foreign key property 'LotteryDraw.HouseId1' was created in shadow state because a conflicting property with the simple name 'HouseId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-09-28 11:47:03.773 +03:00 [WRN] The foreign key property 'LotteryTicket.HouseId1' was created in shadow state because a conflicting property with the simple name 'HouseId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-09-28 11:47:03.780 +03:00 [WRN] The foreign key property 'LotteryTicket.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-09-28 11:47:03.781 +03:00 [WRN] The foreign key property 'Transaction.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-09-28 11:47:03.782 +03:00 [WRN] The foreign key property 'UserAddress.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-09-28 11:47:03.782 +03:00 [WRN] The foreign key property 'UserNotification.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-09-28 11:47:03.783 +03:00 [WRN] The foreign key property 'UserPaymentMethod.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-09-28 11:47:03.783 +03:00 [WRN] The foreign key property 'UserPhone.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-09-28 11:47:03.784 +03:00 [WRN] The foreign key property 'UserPromotion.PromotionId1' was created in shadow state because a conflicting property with the simple name 'PromotionId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-09-28 11:47:03.785 +03:00 [WRN] The foreign key property 'UserPromotion.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-09-28 11:47:03.786 +03:00 [WRN] The foreign key property 'UserSession.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-09-28 11:47:05.628 +03:00 [INF] Database setup and seeding completed successfully
+2025-09-28 11:47:05.638 +03:00 [INF] Starting Amesa Lottery API
+2025-09-28 11:47:05.756 +03:00 [INF] Lottery draw service running...
+2025-09-28 11:47:05.767 +03:00 [INF] Notification background service running...
+2025-09-28 11:48:05.784 +03:00 [INF] Notification background service running...
+2025-09-28 11:48:05.867 +03:00 [INF] Request 6bc63d8a started: POST /api/v1/auth/login from ::1
+2025-09-28 11:48:08.252 +03:00 [INF] User logged in successfully: john.doe@example.com
+2025-09-28 11:48:08.363 +03:00 [INF] Request 6bc63d8a completed: POST /api/v1/auth/login - 200 in 2516ms
+2025-09-28 11:48:08.455 +03:00 [INF] Request 57ce4c7d started: POST /api/v1/auth/register from ::1
+2025-09-28 11:48:09.604 +03:00 [INF] Skipping email verification for development. Email: newuser@example.com, Token: icYxhPBCBhwyT7fMah+AMlIGh1ZqOfz1CN5QT0WhrDo=
+2025-09-28 11:48:09.615 +03:00 [INF] User registered successfully: newuser@example.com
+2025-09-28 11:48:09.618 +03:00 [INF] Request 57ce4c7d completed: POST /api/v1/auth/register - 200 in 1163ms
+2025-09-28 11:48:32.528 +03:00 [INF] Request 029d47b4 started: POST /api/v1/auth/login from ::1
+2025-09-28 11:48:33.244 +03:00 [INF] User logged in successfully: newuser@example.com
+2025-09-28 11:48:33.252 +03:00 [INF] Request 029d47b4 completed: POST /api/v1/auth/login - 200 in 724ms
+2025-09-28 11:49:05.789 +03:00 [INF] Notification background service running...
+2025-09-28 11:50:05.799 +03:00 [INF] Notification background service running...
+2025-09-28 11:51:05.804 +03:00 [INF] Notification background service running...
+2025-09-28 11:51:44.020 +03:00 [INF] Request 41bfa2f0 started: OPTIONS /api/v1/auth/login from ::1
+2025-09-28 11:51:44.026 +03:00 [INF] Request 41bfa2f0 completed: OPTIONS /api/v1/auth/login - 204 in 5ms
+2025-09-28 11:51:44.031 +03:00 [INF] Request c69f5989 started: POST /api/v1/auth/login from ::1
+2025-09-28 11:51:44.037 +03:00 [ERR] Error during user login
+System.UnauthorizedAccessException: Invalid email or password
+   at AmesaBackend.Services.AuthService.LoginAsync(LoginRequest request) in C:\Users\dror0\Curser-Repos\AmesaBase\backend\AmesaBackend\Services\AuthService.cs:line 102
+2025-09-28 11:51:44.148 +03:00 [INF] Request c69f5989 completed: POST /api/v1/auth/login - 401 in 117ms
+2025-09-28 11:51:58.883 +03:00 [INF] Request 80748ece started: OPTIONS /api/v1/auth/login from ::1
+2025-09-28 11:51:58.884 +03:00 [INF] Request 80748ece completed: OPTIONS /api/v1/auth/login - 204 in 0ms
+2025-09-28 11:51:58.887 +03:00 [INF] Request ba14dc28 started: POST /api/v1/auth/login from ::1
+2025-09-28 11:51:58.889 +03:00 [ERR] Error during user login
+System.UnauthorizedAccessException: Invalid email or password
+   at AmesaBackend.Services.AuthService.LoginAsync(LoginRequest request) in C:\Users\dror0\Curser-Repos\AmesaBase\backend\AmesaBackend\Services\AuthService.cs:line 102
+2025-09-28 11:51:58.890 +03:00 [INF] Request ba14dc28 completed: POST /api/v1/auth/login - 401 in 3ms
+2025-09-28 11:52:05.767 +03:00 [INF] Lottery draw service running...
+2025-09-28 11:52:05.809 +03:00 [INF] Notification background service running...
+2025-09-28 11:52:09.248 +03:00 [INF] Request 12ddefcc started: OPTIONS /api/v1/auth/login from ::1
+2025-09-28 11:52:09.249 +03:00 [INF] Request 12ddefcc completed: OPTIONS /api/v1/auth/login - 204 in 0ms
+2025-09-28 11:52:09.252 +03:00 [INF] Request 6cf298ff started: POST /api/v1/auth/login from ::1
+2025-09-28 11:52:09.254 +03:00 [ERR] Error during user login
+System.UnauthorizedAccessException: Invalid email or password
+   at AmesaBackend.Services.AuthService.LoginAsync(LoginRequest request) in C:\Users\dror0\Curser-Repos\AmesaBase\backend\AmesaBackend\Services\AuthService.cs:line 102
+2025-09-28 11:52:09.256 +03:00 [INF] Request 6cf298ff completed: POST /api/v1/auth/login - 401 in 3ms
+2025-09-28 11:53:05.826 +03:00 [INF] Notification background service running...
+2025-09-28 11:54:05.838 +03:00 [INF] Notification background service running...
+2025-09-28 11:54:12.063 +03:00 [INF] Request df49a890 started: OPTIONS /api/v1/auth/login from ::1
+2025-09-28 11:54:12.064 +03:00 [INF] Request df49a890 completed: OPTIONS /api/v1/auth/login - 204 in 0ms
+2025-09-28 11:54:12.068 +03:00 [INF] Request e8a1ada0 started: POST /api/v1/auth/login from ::1
+2025-09-28 11:54:12.462 +03:00 [INF] User logged in successfully: john.doe@example.com
+2025-09-28 11:54:12.465 +03:00 [INF] Request e8a1ada0 completed: POST /api/v1/auth/login - 200 in 397ms
+2025-09-28 11:55:05.849 +03:00 [INF] Notification background service running...
+2025-09-28 11:56:05.853 +03:00 [INF] Notification background service running...
+2025-09-28 11:56:49.926 +03:00 [INF] Request 2d956e0f started: OPTIONS /api/v1/auth/login from ::1
+2025-09-28 11:56:49.926 +03:00 [INF] Request 2d956e0f completed: OPTIONS /api/v1/auth/login - 204 in 0ms
+2025-09-28 11:56:49.929 +03:00 [INF] Request 1c99f4fe started: POST /api/v1/auth/login from ::1
+2025-09-28 11:56:49.932 +03:00 [ERR] Error during user login
+System.UnauthorizedAccessException: Invalid email or password
+   at AmesaBackend.Services.AuthService.LoginAsync(LoginRequest request) in C:\Users\dror0\Curser-Repos\AmesaBase\backend\AmesaBackend\Services\AuthService.cs:line 102
+2025-09-28 11:56:49.933 +03:00 [INF] Request 1c99f4fe completed: POST /api/v1/auth/login - 401 in 4ms
+2025-09-28 11:56:59.801 +03:00 [INF] Request 907f71a1 started: OPTIONS /api/v1/auth/login from ::1
+2025-09-28 11:56:59.802 +03:00 [INF] Request 907f71a1 completed: OPTIONS /api/v1/auth/login - 204 in 0ms
+2025-09-28 11:56:59.806 +03:00 [INF] Request a79ae179 started: POST /api/v1/auth/login from ::1
+2025-09-28 11:56:59.809 +03:00 [ERR] Error during user login
+System.UnauthorizedAccessException: Invalid email or password
+   at AmesaBackend.Services.AuthService.LoginAsync(LoginRequest request) in C:\Users\dror0\Curser-Repos\AmesaBase\backend\AmesaBackend\Services\AuthService.cs:line 102
+2025-09-28 11:56:59.811 +03:00 [INF] Request a79ae179 completed: POST /api/v1/auth/login - 401 in 4ms
+2025-09-28 11:57:05.778 +03:00 [INF] Lottery draw service running...
+2025-09-28 11:57:05.841 +03:00 [INF] Request 6ad8f293 started: OPTIONS /api/v1/auth/login from ::1
+2025-09-28 11:57:05.842 +03:00 [INF] Request 6ad8f293 completed: OPTIONS /api/v1/auth/login - 204 in 1ms
+2025-09-28 11:57:05.849 +03:00 [INF] Request 1ff98596 started: POST /api/v1/auth/login from ::1
+2025-09-28 11:57:05.859 +03:00 [INF] Notification background service running...
+2025-09-28 11:57:06.402 +03:00 [INF] User logged in successfully: john.doe@example.com
+2025-09-28 11:57:06.404 +03:00 [INF] Request 1ff98596 completed: POST /api/v1/auth/login - 200 in 554ms
+2025-09-28 11:58:05.868 +03:00 [INF] Notification background service running...
+2025-09-28 11:59:03.698 +03:00 [INF] Request ee198f28 started: OPTIONS /api/v1/auth/login from ::1
+2025-09-28 11:59:03.698 +03:00 [INF] Request ee198f28 completed: OPTIONS /api/v1/auth/login - 204 in 0ms
+2025-09-28 11:59:03.704 +03:00 [INF] Request 18cca752 started: POST /api/v1/auth/login from ::1
+2025-09-28 11:59:03.707 +03:00 [ERR] Error during user login
+System.UnauthorizedAccessException: Invalid email or password
+   at AmesaBackend.Services.AuthService.LoginAsync(LoginRequest request) in C:\Users\dror0\Curser-Repos\AmesaBase\backend\AmesaBackend\Services\AuthService.cs:line 102
+2025-09-28 11:59:03.709 +03:00 [INF] Request 18cca752 completed: POST /api/v1/auth/login - 401 in 4ms
+2025-09-28 11:59:05.875 +03:00 [INF] Notification background service running...
+2025-09-28 11:59:14.367 +03:00 [INF] Request becc43af started: OPTIONS /api/v1/auth/login from ::1
+2025-09-28 11:59:14.374 +03:00 [INF] Request becc43af completed: OPTIONS /api/v1/auth/login - 204 in 8ms
+2025-09-28 11:59:14.383 +03:00 [INF] Request 408f64a8 started: POST /api/v1/auth/login from ::1
+2025-09-28 11:59:14.391 +03:00 [ERR] Error during user login
+System.UnauthorizedAccessException: Invalid email or password
+   at AmesaBackend.Services.AuthService.LoginAsync(LoginRequest request) in C:\Users\dror0\Curser-Repos\AmesaBase\backend\AmesaBackend\Services\AuthService.cs:line 102
+2025-09-28 11:59:14.394 +03:00 [INF] Request 408f64a8 completed: POST /api/v1/auth/login - 401 in 11ms
+2025-09-28 12:00:05.382 +03:00 [INF] Request 6159f3e0 started: POST /api/v1/auth/login from ::1
+2025-09-28 12:00:05.397 +03:00 [ERR] Error during user login
+System.UnauthorizedAccessException: Invalid email or password
+   at AmesaBackend.Services.AuthService.LoginAsync(LoginRequest request) in C:\Users\dror0\Curser-Repos\AmesaBase\backend\AmesaBackend\Services\AuthService.cs:line 102
+2025-09-28 12:00:05.400 +03:00 [INF] Request 6159f3e0 completed: POST /api/v1/auth/login - 401 in 18ms
+2025-09-28 12:00:05.888 +03:00 [INF] Notification background service running...
+2025-09-28 12:00:27.457 +03:00 [INF] Request bbcc83b1 started: POST /api/v1/auth/register from ::1
+2025-09-28 12:00:27.864 +03:00 [INF] Skipping email verification for development. Email: dror091@gmail.com, Token: dKpyru95cy02/d/bZK8uZe6+gOe9q0BodR+aOaZleqI=
+2025-09-28 12:00:27.868 +03:00 [INF] User registered successfully: dror091@gmail.com
+2025-09-28 12:00:27.868 +03:00 [INF] Request bbcc83b1 completed: POST /api/v1/auth/register - 200 in 411ms
+2025-09-28 12:00:40.338 +03:00 [INF] Request 9347bb53 started: POST /api/v1/auth/login from ::1
+2025-09-28 12:00:40.677 +03:00 [INF] User logged in successfully: dror091@gmail.com
+2025-09-28 12:00:40.678 +03:00 [INF] Request 9347bb53 completed: POST /api/v1/auth/login - 200 in 340ms
+2025-09-28 12:01:05.895 +03:00 [INF] Notification background service running...
+2025-09-28 12:02:05.784 +03:00 [INF] Lottery draw service running...
+2025-09-28 12:02:05.895 +03:00 [INF] Notification background service running...
+2025-09-28 12:03:05.905 +03:00 [INF] Notification background service running...
+2025-09-28 12:04:05.907 +03:00 [INF] Notification background service running...
+2025-09-28 12:05:05.921 +03:00 [INF] Notification background service running...
+2025-09-28 12:06:05.924 +03:00 [INF] Notification background service running...
+2025-09-28 12:07:05.795 +03:00 [INF] Lottery draw service running...
+2025-09-28 12:07:05.937 +03:00 [INF] Notification background service running...
+2025-09-28 12:08:05.939 +03:00 [INF] Notification background service running...
+2025-09-28 12:09:05.949 +03:00 [INF] Notification background service running...
+2025-09-28 12:10:05.956 +03:00 [INF] Notification background service running...
+2025-09-28 12:11:05.968 +03:00 [INF] Notification background service running...
+2025-09-28 12:12:05.803 +03:00 [INF] Lottery draw service running...
+2025-09-28 12:12:05.980 +03:00 [INF] Notification background service running...
+2025-09-28 12:13:05.991 +03:00 [INF] Notification background service running...
+2025-09-28 12:14:05.999 +03:00 [INF] Notification background service running...
+2025-09-28 12:15:06.000 +03:00 [INF] Notification background service running...
+2025-09-28 12:16:06.012 +03:00 [INF] Notification background service running...
+[2025-09-28 12:22:11.826 +03:00 WRN] The foreign key property 'LotteryDraw.HouseId1' was created in shadow state because a conflicting property with the simple name 'HouseId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core. {"EventId":{"Id":10625,"Name":"Microsoft.EntityFrameworkCore.Model.Validation.ShadowForeignKeyPropertyCreated"},"SourceContext":"Microsoft.EntityFrameworkCore.Model.Validation"}
+[2025-09-28 12:22:11.996 +03:00 WRN] The foreign key property 'LotteryTicket.HouseId1' was created in shadow state because a conflicting property with the simple name 'HouseId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core. {"EventId":{"Id":10625,"Name":"Microsoft.EntityFrameworkCore.Model.Validation.ShadowForeignKeyPropertyCreated"},"SourceContext":"Microsoft.EntityFrameworkCore.Model.Validation"}
+[2025-09-28 12:22:11.999 +03:00 WRN] The foreign key property 'LotteryTicket.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core. {"EventId":{"Id":10625,"Name":"Microsoft.EntityFrameworkCore.Model.Validation.ShadowForeignKeyPropertyCreated"},"SourceContext":"Microsoft.EntityFrameworkCore.Model.Validation"}
+[2025-09-28 12:22:12.000 +03:00 WRN] The foreign key property 'Transaction.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core. {"EventId":{"Id":10625,"Name":"Microsoft.EntityFrameworkCore.Model.Validation.ShadowForeignKeyPropertyCreated"},"SourceContext":"Microsoft.EntityFrameworkCore.Model.Validation"}
+[2025-09-28 12:22:12.001 +03:00 WRN] The foreign key property 'UserAddress.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core. {"EventId":{"Id":10625,"Name":"Microsoft.EntityFrameworkCore.Model.Validation.ShadowForeignKeyPropertyCreated"},"SourceContext":"Microsoft.EntityFrameworkCore.Model.Validation"}
+[2025-09-28 12:22:12.002 +03:00 WRN] The foreign key property 'UserNotification.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core. {"EventId":{"Id":10625,"Name":"Microsoft.EntityFrameworkCore.Model.Validation.ShadowForeignKeyPropertyCreated"},"SourceContext":"Microsoft.EntityFrameworkCore.Model.Validation"}
+[2025-09-28 12:22:12.002 +03:00 WRN] The foreign key property 'UserPaymentMethod.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core. {"EventId":{"Id":10625,"Name":"Microsoft.EntityFrameworkCore.Model.Validation.ShadowForeignKeyPropertyCreated"},"SourceContext":"Microsoft.EntityFrameworkCore.Model.Validation"}
+[2025-09-28 12:22:12.003 +03:00 WRN] The foreign key property 'UserPhone.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core. {"EventId":{"Id":10625,"Name":"Microsoft.EntityFrameworkCore.Model.Validation.ShadowForeignKeyPropertyCreated"},"SourceContext":"Microsoft.EntityFrameworkCore.Model.Validation"}
+[2025-09-28 12:22:12.003 +03:00 WRN] The foreign key property 'UserPromotion.PromotionId1' was created in shadow state because a conflicting property with the simple name 'PromotionId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core. {"EventId":{"Id":10625,"Name":"Microsoft.EntityFrameworkCore.Model.Validation.ShadowForeignKeyPropertyCreated"},"SourceContext":"Microsoft.EntityFrameworkCore.Model.Validation"}
+[2025-09-28 12:22:12.004 +03:00 WRN] The foreign key property 'UserPromotion.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core. {"EventId":{"Id":10625,"Name":"Microsoft.EntityFrameworkCore.Model.Validation.ShadowForeignKeyPropertyCreated"},"SourceContext":"Microsoft.EntityFrameworkCore.Model.Validation"}
+[2025-09-28 12:22:12.005 +03:00 WRN] The foreign key property 'UserSession.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core. {"EventId":{"Id":10625,"Name":"Microsoft.EntityFrameworkCore.Model.Validation.ShadowForeignKeyPropertyCreated"},"SourceContext":"Microsoft.EntityFrameworkCore.Model.Validation"}
+[2025-09-28 12:22:13.632 +03:00 ERR] Failed executing DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "translations" AS "t") {"EventId":{"Id":20102,"Name":"Microsoft.EntityFrameworkCore.Database.Command.CommandError"},"SourceContext":"Microsoft.EntityFrameworkCore.Database.Command"}
+[2025-09-28 12:22:13.674 +03:00 ERR] An exception occurred while iterating over the results of a query for context type 'AmesaBackend.Data.AmesaDbContext'.
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: translations'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync() {"EventId":{"Id":10100,"Name":"Microsoft.EntityFrameworkCore.Query.QueryIterationFailed"},"SourceContext":"Microsoft.EntityFrameworkCore.Query"}
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: translations'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+[2025-09-28 12:22:13.685 +03:00 ERR] An error occurred while setting up the database {}
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: translations'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at AmesaBackend.Services.TranslationSeedingService.SeedTranslationsAsync(AmesaDbContext context) in C:\Users\dror0\Curser-Repos\AmesaBase\backend\AmesaBackend\Services\TranslationSeedingService.cs:line 15
+   at Program.<Main>$(String[] args) in C:\Users\dror0\Curser-Repos\AmesaBase\backend\AmesaBackend\Program.cs:line 231
+[2025-09-28 12:22:13.751 +03:00 INF] Starting Amesa Lottery API {}
+[2025-09-28 12:22:13.896 +03:00 INF] Lottery draw service running... {"SourceContext":"AmesaBackend.Services.LotteryDrawService"}
+[2025-09-28 12:22:13.906 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 12:22:19.830 +03:00 INF] Request c1997961 started: GET /api/v1/translations/en from ::1 {"SourceContext":"AmesaBackend.Middleware.RequestLoggingMiddleware","RequestPath":"/api/v1/translations/en","ConnectionId":"0HNFUE2301IIJ"}
+[2025-09-28 12:22:20.583 +03:00 ERR] Failed executing DbCommand (5ms) [Parameters=[@__languageCode_0='?' (Size = 2)], CommandType='"Text"', CommandTimeout='30']
+SELECT "t"."Id", "t"."Category", "t"."CreatedAt", "t"."CreatedBy", "t"."Description", "t"."IsActive", "t"."Key", "t"."LanguageCode", "t"."UpdatedAt", "t"."UpdatedBy", "t"."Value"
+FROM "translations" AS "t"
+WHERE "t"."LanguageCode" = @__languageCode_0 AND "t"."IsActive"
+ORDER BY "t"."Key" {"EventId":{"Id":20102,"Name":"Microsoft.EntityFrameworkCore.Database.Command.CommandError"},"SourceContext":"Microsoft.EntityFrameworkCore.Database.Command","ActionId":"cb376123-452c-470b-ba39-f98e59c2c80b","ActionName":"AmesaBackend.Controllers.TranslationsController.GetTranslations (AmesaBackend)","RequestId":"0HNFUE2301IIJ:00000001","RequestPath":"/api/v1/translations/en","ConnectionId":"0HNFUE2301IIJ"}
+[2025-09-28 12:22:20.589 +03:00 ERR] An exception occurred while iterating over the results of a query for context type 'AmesaBackend.Data.AmesaDbContext'.
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: translations'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync() {"EventId":{"Id":10100,"Name":"Microsoft.EntityFrameworkCore.Query.QueryIterationFailed"},"SourceContext":"Microsoft.EntityFrameworkCore.Query","ActionId":"cb376123-452c-470b-ba39-f98e59c2c80b","ActionName":"AmesaBackend.Controllers.TranslationsController.GetTranslations (AmesaBackend)","RequestId":"0HNFUE2301IIJ:00000001","RequestPath":"/api/v1/translations/en","ConnectionId":"0HNFUE2301IIJ"}
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: translations'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+[2025-09-28 12:22:20.611 +03:00 ERR] Error retrieving translations for language en {"SourceContext":"AmesaBackend.Controllers.TranslationsController","ActionId":"cb376123-452c-470b-ba39-f98e59c2c80b","ActionName":"AmesaBackend.Controllers.TranslationsController.GetTranslations (AmesaBackend)","RequestId":"0HNFUE2301IIJ:00000001","RequestPath":"/api/v1/translations/en","ConnectionId":"0HNFUE2301IIJ"}
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: translations'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at AmesaBackend.Controllers.TranslationsController.GetTranslations(String languageCode) in C:\Users\dror0\Curser-Repos\AmesaBase\backend\AmesaBackend\Controllers\TranslationsController.cs:line 38
+[2025-09-28 12:22:20.840 +03:00 INF] Request c1997961 completed: GET /api/v1/translations/en - 500 in 1050ms {"SourceContext":"AmesaBackend.Middleware.RequestLoggingMiddleware","RequestPath":"/api/v1/translations/en","ConnectionId":"0HNFUE2301IIJ"}
+[2025-09-28 12:23:13.925 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}
+[2025-09-28 12:23:37.451 +03:00 INF] Request 1fdde902 started: GET /api/v1/houses from ::1 {"SourceContext":"AmesaBackend.Middleware.RequestLoggingMiddleware","RequestPath":"/api/v1/houses","ConnectionId":"0HNFUE2301IIK"}
+[2025-09-28 12:23:38.568 +03:00 INF] Request 1fdde902 completed: GET /api/v1/houses - 200 in 1117ms {"SourceContext":"AmesaBackend.Middleware.RequestLoggingMiddleware","RequestPath":"/api/v1/houses","ConnectionId":"0HNFUE2301IIK"}
+[2025-09-28 12:23:38.634 +03:00 INF] Request 483432a2 started: GET /api/v1/translations/languages from ::1 {"SourceContext":"AmesaBackend.Middleware.RequestLoggingMiddleware","RequestPath":"/api/v1/translations/languages","ConnectionId":"0HNFUE2301IIK"}
+[2025-09-28 12:23:38.680 +03:00 ERR] Failed executing DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "l"."Code", "l"."CreatedAt", "l"."DisplayOrder", "l"."FlagUrl", "l"."IsActive", "l"."IsDefault", "l"."Name", "l"."NativeName", "l"."UpdatedAt"
+FROM "languages" AS "l"
+WHERE "l"."IsActive"
+ORDER BY "l"."DisplayOrder", "l"."Name" {"EventId":{"Id":20102,"Name":"Microsoft.EntityFrameworkCore.Database.Command.CommandError"},"SourceContext":"Microsoft.EntityFrameworkCore.Database.Command","ActionId":"65c730f2-2c3e-4a8c-9e09-5af380872564","ActionName":"AmesaBackend.Controllers.TranslationsController.GetLanguages (AmesaBackend)","RequestId":"0HNFUE2301IIK:00000002","RequestPath":"/api/v1/translations/languages","ConnectionId":"0HNFUE2301IIK"}
+[2025-09-28 12:23:38.682 +03:00 ERR] An exception occurred while iterating over the results of a query for context type 'AmesaBackend.Data.AmesaDbContext'.
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: languages'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync() {"EventId":{"Id":10100,"Name":"Microsoft.EntityFrameworkCore.Query.QueryIterationFailed"},"SourceContext":"Microsoft.EntityFrameworkCore.Query","ActionId":"65c730f2-2c3e-4a8c-9e09-5af380872564","ActionName":"AmesaBackend.Controllers.TranslationsController.GetLanguages (AmesaBackend)","RequestId":"0HNFUE2301IIK:00000002","RequestPath":"/api/v1/translations/languages","ConnectionId":"0HNFUE2301IIK"}
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: languages'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+[2025-09-28 12:23:38.688 +03:00 ERR] Error retrieving languages {"SourceContext":"AmesaBackend.Controllers.TranslationsController","ActionId":"65c730f2-2c3e-4a8c-9e09-5af380872564","ActionName":"AmesaBackend.Controllers.TranslationsController.GetLanguages (AmesaBackend)","RequestId":"0HNFUE2301IIK:00000002","RequestPath":"/api/v1/translations/languages","ConnectionId":"0HNFUE2301IIK"}
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: languages'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at AmesaBackend.Controllers.TranslationsController.GetLanguages() in C:\Users\dror0\Curser-Repos\AmesaBase\backend\AmesaBackend\Controllers\TranslationsController.cs:line 86
+[2025-09-28 12:23:38.698 +03:00 INF] Request 483432a2 completed: GET /api/v1/translations/languages - 500 in 63ms {"SourceContext":"AmesaBackend.Middleware.RequestLoggingMiddleware","RequestPath":"/api/v1/translations/languages","ConnectionId":"0HNFUE2301IIK"}
+[2025-09-28 12:24:13.932 +03:00 INF] Notification background service running... {"SourceContext":"AmesaBackend.Services.NotificationBackgroundService"}

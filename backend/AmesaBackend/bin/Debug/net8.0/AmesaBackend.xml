@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AmesaBackend</name>
+    </assembly>
+    <members>
+        <member name="M:AmesaBackend.Controllers.AuthController.Register(AmesaBackend.DTOs.RegisterRequest)">
+            <summary>
+            Register a new user account
+            </summary>
+        </member>
+        <member name="M:AmesaBackend.Controllers.AuthController.Login(AmesaBackend.DTOs.LoginRequest)">
+            <summary>
+            Login with email and password
+            </summary>
+        </member>
+        <member name="M:AmesaBackend.Controllers.AuthController.RefreshToken(AmesaBackend.DTOs.RefreshTokenRequest)">
+            <summary>
+            Refresh access token using refresh token
+            </summary>
+        </member>
+        <member name="M:AmesaBackend.Controllers.AuthController.Logout(AmesaBackend.DTOs.RefreshTokenRequest)">
+            <summary>
+            Logout user and invalidate refresh token
+            </summary>
+        </member>
+        <member name="M:AmesaBackend.Controllers.AuthController.ForgotPassword(AmesaBackend.DTOs.ForgotPasswordRequest)">
+            <summary>
+            Request password reset
+            </summary>
+        </member>
+        <member name="M:AmesaBackend.Controllers.AuthController.ResetPassword(AmesaBackend.DTOs.ResetPasswordRequest)">
+            <summary>
+            Reset password with token
+            </summary>
+        </member>
+        <member name="M:AmesaBackend.Controllers.AuthController.VerifyEmail(AmesaBackend.DTOs.VerifyEmailRequest)">
+            <summary>
+            Verify email address with token
+            </summary>
+        </member>
+        <member name="M:AmesaBackend.Controllers.AuthController.VerifyPhone(AmesaBackend.DTOs.VerifyPhoneRequest)">
+            <summary>
+            Verify phone number with code
+            </summary>
+        </member>
+        <member name="M:AmesaBackend.Controllers.AuthController.GetCurrentUser">
+            <summary>
+            Get current user profile
+            </summary>
+        </member>
+        <member name="M:AmesaBackend.Controllers.HousesController.GetHouses(System.Int32,System.Int32,System.String,System.Nullable{System.Decimal},System.Nullable{System.Decimal},System.String,System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Get all houses with pagination and filtering
+            </summary>
+        </member>
+        <member name="M:AmesaBackend.Controllers.HousesController.GetHouse(System.Guid)">
+            <summary>
+            Get house details by ID
+            </summary>
+        </member>
+        <member name="M:AmesaBackend.Controllers.HousesController.GetAvailableTickets(System.Guid)">
+            <summary>
+            Get available tickets for a house
+            </summary>
+        </member>
+        <member name="M:AmesaBackend.Controllers.HousesController.PurchaseTickets(System.Guid,AmesaBackend.DTOs.PurchaseTicketRequest)">
+            <summary>
+            Purchase lottery tickets (requires authentication)
+            </summary>
+        </member>
+        <member name="M:AmesaBackend.Controllers.LotteryResultsController.GetLotteryResults(AmesaBackend.DTOs.LotteryResultsFilterDto)">
+            <summary>
+            Get filtered lottery results with pagination
+            </summary>
+        </member>
+        <member name="M:AmesaBackend.Controllers.LotteryResultsController.GetLotteryResult(System.Guid)">
+            <summary>
+            Get specific lottery result by ID
+            </summary>
+        </member>
+        <member name="M:AmesaBackend.Controllers.LotteryResultsController.ValidateQRCode(System.String)">
+            <summary>
+            Validate QR code and get winner information
+            </summary>
+        </member>
+        <member name="M:AmesaBackend.Controllers.LotteryResultsController.ClaimPrize(AmesaBackend.DTOs.ClaimPrizeRequest)">
+            <summary>
+            Claim a prize
+            </summary>
+        </member>
+        <member name="M:AmesaBackend.Controllers.LotteryResultsController.CreatePrizeDelivery(AmesaBackend.DTOs.CreatePrizeDeliveryRequest)">
+            <summary>
+            Create prize delivery request for 2nd and 3rd place winners
+            </summary>
+        </member>
+        <member name="M:AmesaBackend.Controllers.TranslationsController.GetTranslations(System.String)">
+            <summary>
+            Get all translations for a specific language
+            </summary>
+            <param name="languageCode">Language code (e.g., 'en', 'pl')</param>
+            <returns>Dictionary of translation keys and values</returns>
+        </member>
+        <member name="M:AmesaBackend.Controllers.TranslationsController.GetLanguages">
+            <summary>
+            Get all available languages
+            </summary>
+            <returns>List of available languages</returns>
+        </member>
+        <member name="M:AmesaBackend.Controllers.TranslationsController.GetTranslation(System.String,System.String)">
+            <summary>
+            Get a specific translation by key and language
+            </summary>
+            <param name="languageCode">Language code</param>
+            <param name="key">Translation key</param>
+            <returns>Translation value</returns>
+        </member>
+        <member name="M:AmesaBackend.Controllers.TranslationsController.CreateTranslation(AmesaBackend.DTOs.CreateTranslationRequest)">
+            <summary>
+            Create a new translation (Admin only)
+            </summary>
+            <param name="request">Translation creation request</param>
+            <returns>Created translation</returns>
+        </member>
+        <member name="M:AmesaBackend.Controllers.TranslationsController.UpdateTranslation(System.String,System.String,AmesaBackend.DTOs.UpdateTranslationRequest)">
+            <summary>
+            Update an existing translation (Admin only)
+            </summary>
+            <param name="languageCode">Language code</param>
+            <param name="key">Translation key</param>
+            <param name="request">Translation update request</param>
+            <returns>Updated translation</returns>
+        </member>
+        <member name="M:AmesaBackend.Controllers.TranslationsController.DeleteTranslation(System.String,System.String)">
+            <summary>
+            Delete a translation (Admin only)
+            </summary>
+            <param name="languageCode">Language code</param>
+            <param name="key">Translation key</param>
+            <returns>Success response</returns>
+        </member>
+    </members>
+</doc>

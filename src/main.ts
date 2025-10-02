@@ -15,6 +15,7 @@ import { AccessibilityService } from './services/accessibility.service';
 import { routes } from './app.routes';
 import { provideRouter, withPreloading, withInMemoryScrolling } from '@angular/router';
 import { CustomPreloadingStrategy } from './app.preloading-strategy';
+import { provideHttpClient } from '@angular/common/http';
 
 bootstrapApplication(AppComponent, {
   providers: [
@@ -37,6 +38,7 @@ bootstrapApplication(AppComponent, {
         anchorScrolling: 'enabled'
       })
     ),
+    provideHttpClient(),
     RoutePerformanceInterceptor
   ]
 });
